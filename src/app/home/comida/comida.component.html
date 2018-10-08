@@ -1,11 +1,11 @@
 <div class="container">
-
+  <h3 style="color: white;">LAS COMIDAS DEL DIA SON: </h3> <hr>
 
     <div class="row">
       <div class="col-sm-3"*ngFor="let comida of Comidas">
-        <div class="card bg-secondary text-white" style="max-width: auto;">
-          <div class="card-body">
-            <h5 class="card-title">{{comida.nombre}}</h5>
+        <div class="card  text-white" style="max-width: auto; background-color: #e6e6e6;">
+          <div class="card-body" >
+            <h5 class="card-title" style="color: black;">{{comida.nombre}}</h5>
             <hr>
             <img src="assets/Img/Img Cards/{{comida.imagen}}.jpg">
             <hr>
