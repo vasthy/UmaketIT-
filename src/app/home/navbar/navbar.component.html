@@ -1,0 +1,47 @@
+
+
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a routerLink="/home/comida" routerLinkActive="active">Comida</a>
+    <a routerLink="/home/inicio" routerLinkActive="active">Delivery</a>
+    <a >Acerca de Nosotros</a>
+    <a >Contactanos</a>
+  </div>
+
+  <div  id="main">
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="color:black">
+          <!-- Brand -->
+         
+        
+          <!-- Links -->
+          <ul class="navbar-nav  mr-auto">
+              <span style="font-size:30px; cursor:pointer; color:white;" onclick="openNav()">&#9776; uMakeIT!<img src="assets/Img/logo.png" style="width:100px;"></span>
+              
+          </ul>
+
+          <ul class="navbar-nav ">
+            <li class="col-sm-1"></li>
+             <!-- Dropdown -->
+             <li class="nav-item dropdown" >
+                <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown" style="color:white;">
+                Nombre de usuario
+                </a>
+                <div class="dropdown-menu">
+              
+                  <a  routerLink="/home/CambioClave" routerLinkActive="active" class="dropdown-item" >Cambio de clave</a>
+                  <a  routerLink="/home/historial" routerLinkActive="active" class="dropdown-item" >Historial de compra</a>
+                  <a routerLink="/home/compras" routerLinkActive="active" class="dropdown-item" >Compras</a>
+                  <a  routerLink="/login" routerLinkActive="active"class="dropdown-item" >salir </a>
+
+                </div>
+              </li>
+          </ul>
+        
+        </nav>
+        <br><br>
+        
+        <div class="col-sm-9">
+          <router-outlet></router-outlet>
+        </div>
+          
+  </div>
