@@ -15,6 +15,7 @@ import { AcercaNComponent } from './home/acerca-n/acerca-n.component';
 import { DeliveryComponent } from './home/delivery/delivery.component';
 import { DesayunoComponent } from './home/desayuno/desayuno.component';
 import { PostresComponent } from './home/postres/postres.component';
+import { ContactanosComponent } from './home/contactanos/contactanos.component';
 
 
 
@@ -32,7 +33,8 @@ const appRoutes: Routes=[
         {path: 'acerca', component: AcercaNComponent},
         {path: 'delivery', component: DeliveryComponent},
         {path: 'desayuno', component: DesayunoComponent},
-        {path: 'postre', component: PostresComponent}
+        {path: 'postre', component: PostresComponent},
+        {path: 'contactanos', component: ContactanosComponent}
       ]
 
   },
@@ -57,7 +59,8 @@ const appRoutes: Routes=[
     AcercaNComponent,
     DeliveryComponent,
     DesayunoComponent,
-    PostresComponent
+    PostresComponent,
+    ContactanosComponent
   ],
   imports: [
     BrowserModule,
