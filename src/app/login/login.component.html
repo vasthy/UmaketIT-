@@ -6,18 +6,22 @@
     <li><img src="assets/Img/16.jpg" ></li>
   </ul>
 
-  <div class="slider-container card" style="background-color:black; opacity:0.8;" >
+  <div class="slider-container card" style="background-color:black; opacity:0.8; width:30%; left: 35%;" >
   	<div class="slider-title">
   		<h1 style="color: white; text-align: center;">INICIAR SESION</h1><hr><br>
   		
   	</div>
   	<form action="" class="slider-form">
   		<div class="form-group">
-  			<label style="color: white;" >Usuario:<input type="text" name="" placeholder="Nombre de usuario" class="form-control" requierd></label>
-  		</div>
+        <label style="color: white;">Usuario: <br> 
+          <input  style="width: 300px;" type="text" name="" placeholder="Nombre de usuario" class="form-control" requierd>
+        </label>
+  		</div><br>
 
   		<div class="form-group">
-  			<label style="color: white; ;">Contrasena:<input type="password" name="" placeholder="Ingrese su contrasena" class="form-control" AutoSize="true" required></label>
+        <label style="color: white;"> Contrasena: <br>
+          <input  style="width: 300px; " type="password" name="" placeholder="Ingrese su contrasena" class="form-control" AutoSize="true" required>
+        </label>
   		</div>
 
   		<label style="color: white;">
@@ -26,8 +30,8 @@
 	
 	
 	<div class="botones">
-		<button type="button" class="btn btn-primary" id="Iniciar" routerLink="/home/inicio" routerLinkActive="active">Iniciar Sesion</button>
-    <button type="button" class="btn btn-primary" style="position:relative; left: 10%;" id="Registrate" onclick="document.getElementById('M').style.display='block'">Registrate</button>
+		<button type="button" class="btn btn-primary" style="position:relative; left: 10%;" id="Iniciar" routerLink="/home/inicio" routerLinkActive="active">Iniciar Sesion</button>
+    <button type="button" class="btn btn-primary" style="position:relative; left: 20%;" id="Registrate" onclick="document.getElementById('M').style.display='block'">Registrate</button>
 	</div>
   	</form>
 

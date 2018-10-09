@@ -18,16 +18,16 @@ export class DeliveryComponent implements OnInit {
   [
     {
       "precio":1,
-      "nombre":"jefferson",
+      "nombre":"Juan Rosales",
       "imagen":"logoD"
     },
     {
       "precio":2,
-      "nombre":"yonkleider",
+      "nombre":"Pedro Martinez",
       "imagen":"logoD"
     }, {
       "precio":3,
-      "nombre":"anakin skywalker",
+      "nombre":"Cristiano Ronaldo",
       "imagen":"logoD"
     },
   ]
