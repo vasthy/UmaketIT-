@@ -13,6 +13,8 @@ import { CambioClaveComponent } from './home/cambio-clave/cambio-clave.component
 import { InicioComponent} from './home/inicio/inicio.component';
 import { AcercaNComponent } from './home/acerca-n/acerca-n.component';
 import { DeliveryComponent } from './home/delivery/delivery.component';
+import { DesayunoComponent } from './home/desayuno/desayuno.component';
+import { PostresComponent } from './home/postres/postres.component';
 
 
 
@@ -28,7 +30,9 @@ const appRoutes: Routes=[
         {path:'CambioClave', component: CambioClaveComponent},
         {path: 'inicio', component: InicioComponent},
         {path: 'acerca', component: AcercaNComponent},
-        {path: 'delivery', component: DeliveryComponent}
+        {path: 'delivery', component: DeliveryComponent},
+        {path: 'desayuno', component: DesayunoComponent},
+        {path: 'postre', component: PostresComponent}
       ]
 
   },
@@ -51,7 +55,9 @@ const appRoutes: Routes=[
     CambioClaveComponent,
     InicioComponent,
     AcercaNComponent,
-    DeliveryComponent
+    DeliveryComponent,
+    DesayunoComponent,
+    PostresComponent
   ],
   imports: [
     BrowserModule,
