@@ -1,0 +1,36 @@
+<div class="container">
+    <h3 style="color: white;">SEGURIDAD A LA HORA DE ENTREGA</h3> <hr>
+    <p style="color: white;">puedes conocer nuestros deliverys en todo momento</p><br>
+  
+      <div class="row">
+        <div class="col-sm-4"*ngFor="let deliverys of Delive">
+          <div class="card" style="max-width: auto; background-color: #e6e6e6;">
+            <div class="card-body" >
+              <h5 class="card-title" style="color: black;">{{deliverys.nombre}}</h5>
+              <hr>
+              <img src="assets/Img/{{deliverys.imagen}}.png" style="width: 50%">
+              <hr>
+              <div class="w3-container">
+                <button onclick="document.getElementById('m').style.display='block'" class="w3-button w3-blue" >Informacion</button>
+                <hr>
+                <div id="m" class="w3-modal fle" style="max-width: auto">
+                  <div class="w3-modal-content w3-animate-zoom" >
+                    <header class="w3-container w3-teal">
+                      <span onclick="document.getElementById('m').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                      <h2>Info de los delivery a la mano </h2>
+                    </header>
+                    <div class="w3-container"  >
+                     <p style="color: black;" >cedula: <br> nombre: <br> apellido: <br> direccion: <br> estrellas: <br></p>
+                    
+                    </div>
+                    <footer class="w3-container">
+                      <p style="color: black;">Aratxo</p>
+                    </footer>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>

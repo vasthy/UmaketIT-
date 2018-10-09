@@ -2,10 +2,25 @@
 
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a routerLink="/home/comida" routerLinkActive="active">Comida</a>
-    <a routerLink="/home/inicio" routerLinkActive="active">Delivery</a>
-    <a >Acerca de Nosotros</a>
-    <a >Contactanos</a>
+    <a>INICIO</a>
+    <li>
+      <a>COMIDA</a>
+      <ul>
+        <li>
+          <a>DESAYUNO</a>
+        </li>  
+        <li>
+          <a routerLink="/home/almuerzo" routerLinkActive="active" >ALMUERZO</a>
+        </li>
+        <li>
+            <a>POSTRES</a>
+          </li>
+      
+      </ul>
+    </li>   
+    <a routerLink="/home/delivery" routerLinkActive="active">DELIVERY</a>
+    <a >ACERCA DE NOSOTROS</a>
+    <a >CONTACTANOS</a>
   </div>
 
   <div  id="main">

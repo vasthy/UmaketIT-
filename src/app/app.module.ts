@@ -11,6 +11,9 @@ import { ComprasComponent } from './home/compras/compras.component';
 import { HistorialComprasComponent } from './home/historial-compras/historial-compras.component';
 import { CambioClaveComponent } from './home/cambio-clave/cambio-clave.component';
 import { InicioComponent} from './home/inicio/inicio.component';
+import { AcercaNComponent } from './home/acerca-n/acerca-n.component';
+import { DeliveryComponent } from './home/delivery/delivery.component';
+
 
 
 const appRoutes: Routes=[
@@ -19,11 +22,13 @@ const appRoutes: Routes=[
   {path: 'home', component: HomeComponent,
 
       children:[
-        {path:'comida', component: ComidaComponent},
+        {path:'almuerzo', component: ComidaComponent},
         {path: 'historial', component: HistorialComprasComponent},
         {path:'compras', component: ComprasComponent},
         {path:'CambioClave', component: CambioClaveComponent},
-        {path: 'inicio', component: InicioComponent}
+        {path: 'inicio', component: InicioComponent},
+        {path: 'acerca', component: AcercaNComponent},
+        {path: 'delivery', component: DeliveryComponent}
       ]
 
   },
@@ -44,7 +49,9 @@ const appRoutes: Routes=[
     ComprasComponent,
     HistorialComprasComponent,
     CambioClaveComponent,
-    InicioComponent
+    InicioComponent,
+    AcercaNComponent,
+    DeliveryComponent
   ],
   imports: [
     BrowserModule,

@@ -1,16 +1,17 @@
 <div class="container">
-  <h3 style="color: white;">LAS COMIDAS DEL DIA SON: </h3> <hr>
+  <h3 style="color: white;">LOS ALMUERZOS DEL MOMENTO : </h3> <hr>
 
     <div class="row">
-      <div class="col-sm-3"*ngFor="let comida of Comidas">
-        <div class="card  text-white" style="max-width: auto; background-color: #e6e6e6;">
+      <div class="col-sm-4"*ngFor="let comida of Comidas">
+        <div class="card" style="max-width: auto; background-color: #e6e6e6;">
           <div class="card-body" >
             <h5 class="card-title" style="color: black;">{{comida.nombre}}</h5>
             <hr>
             <img src="assets/Img/Img Cards/{{comida.imagen}}.jpg">
             <hr>
             <div class="w3-container">
-              <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-blue">Informate</button>
+              <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-blue" >Informate</button>
+              <hr>
               <button class="w3-button w3-blue"> Comprar </button>
               <div id="id01" class="w3-modal fle" style="max-width: auto">
                 <div class="w3-modal-content w3-animate-zoom">
