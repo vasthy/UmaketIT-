@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container" style="position:relative;">
   <div class="card" style="background-color:white;">
-      <h3 style="color: #610b0b; text-align: center;">LOS ALMUERZOS DEL MOMENTO : </h3>
+      <h3 style="color: black; text-align: center;">LOS ALMUERZOS DEL MOMENTO : </h3>
   </div><hr>
  
 
@@ -8,14 +8,14 @@
       <div class="col-sm-4"*ngFor="let comida of Comidas">
         <div class="card" style="max-width: auto; background-color: white; opacity: 1;">
           <div class="card-body" >
-            <h5 class="card-title" style="color: #610b0b;">{{comida.nombre}}</h5>
+            <h5 class="card-title" style="color: black;">{{comida.nombre}}</h5>
             <hr>
             <img src="assets/Img/Img Cards/{{comida.imagen}}.jpg">
             <hr>
             <div class="w3-container">
-              <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-blue" >Informate</button>
-              <hr>
-              <button class="w3-button w3-blue"> Comprar </button>
+              <button onclick="document.getElementById('id01').style.display='block'" class="w3-button" style="background-color:#610b0b; color:white;" >Informate</button>
+              <br><br>
+              <button class="w3-button" style="background-color:#610b0b; color:white;"> Comprar </button>
               <div id="id01" class="w3-modal fle" style="max-width: auto">
                 <div class="w3-modal-content w3-animate-zoom">
                   <header class="w3-container w3-teal">
