@@ -4,7 +4,7 @@
   
       <div class="row">
         <div class="col-sm-4"*ngFor="let deliverys of Delive">
-          <div class="card" style="max-width: auto; background-color: #e6e6e6;">
+          <div class="card" style="max-width: auto; background-color: floralwhite ;">
             <div class="card-body" >
               <h5 class="card-title" style="color: black;">{{deliverys.nombre}}</h5>
               <hr>
@@ -13,19 +13,16 @@
               <div class="w3-container">
                 <button onclick="document.getElementById('m').style.display='block'" class="w3-button w3-blue" >Informacion</button>
                 <hr>
-                <div id="m" class="w3-modal fle" style="max-width: auto">
+                <div id="m" class="w3-modal fle w3-animate-opacity" style="max-width: auto">
                   <div class="w3-modal-content w3-animate-zoom" >
-                    <header class="w3-container w3-teal">
+                    <header class="w3-container w3-black">
                       <span onclick="document.getElementById('m').style.display='none'" class="w3-button w3-display-topright">&times;</span>
                       <h2>Info de los delivery a la mano </h2>
                     </header>
-                    <div class="w3-container"  >
-                     <p style="color: black;" >cedula: <br> nombre: <br> apellido: <br> direccion: <br> estrellas: <br></p>
+                    <div class="w3-container w3-grey"  >
+                     <p style="color:black ;" >cedula: <br> nombre: <br> apellido: <br> direccion: <br> estrellas: <br> placa del vehiculo: <br> </p>
                     
                     </div>
-                    <footer class="w3-container">
-                      <p style="color: black;">Aratxo</p>
-                    </footer>
                   </div>
                 </div>
               </div>

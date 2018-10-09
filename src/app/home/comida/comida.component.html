@@ -1,11 +1,14 @@
 <div class="container">
-  <h3 style="color: white;">LOS ALMUERZOS DEL MOMENTO : </h3> <hr>
+  <div class="card" style="background-color:white;">
+      <h3 style="color: #610b0b; text-align: center;">LOS ALMUERZOS DEL MOMENTO : </h3>
+  </div><hr>
+ 
 
     <div class="row">
       <div class="col-sm-4"*ngFor="let comida of Comidas">
-        <div class="card" style="max-width: auto; background-color: #e6e6e6;">
+        <div class="card" style="max-width: auto; background-color: white; opacity: 1;">
           <div class="card-body" >
-            <h5 class="card-title" style="color: black;">{{comida.nombre}}</h5>
+            <h5 class="card-title" style="color: #610b0b;">{{comida.nombre}}</h5>
             <hr>
             <img src="assets/Img/Img Cards/{{comida.imagen}}.jpg">
             <hr>

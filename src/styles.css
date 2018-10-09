@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body{
-    background-color: #151515;
+  
+    background-color: black;
+    background-image: url("assets/Img/pizza1.jpg");
+    opacity: 3;
 }
