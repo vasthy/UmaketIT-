@@ -4,26 +4,27 @@
 }
 
 img{
-  width: 1000px;
-  opacity: 0.3;
+  width: 1600px;
+  opacity: 1;
 
 }
 
   #contenedor {
-  width: 1000px;
-  background-color: black;
-  margin: 30px auto;
-  overflow: hidden;
-  position: relative;
-
- 
+    height: 100vh;
+    width: 1600px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+   
 
   }
 
 #contenedor ul{
   list-style: none;
-  width: 100%;
-
+    width: 1600px;
   z-index: 0;
   display: flex;
   animation: slide 10s infinite alternate ;
@@ -34,14 +35,14 @@ img{
   0% {margin-left: 0px;}
   20%{margin-left: 0px;}
 
-  25% {margin-left: -1000px;}
-  45%{margin-left: -1000px;}
+  25% {margin-left: -1600px;}
+  45%{margin-left: -1600px;}
 
-  50% {margin-left: -2000px;}
-  70%{margin-left: -2000px;}
+  50% {margin-left: -3200px;}
+  70%{margin-left: -3200px;}
   
-  75% {margin-left: -3000px;}
-  100%{margin-left: -3000px;}
+  75% {margin-left: -4800px;}
+  100%{margin-left: -4800px;}
 
 }
 
@@ -75,8 +76,9 @@ button:hover {
 
 .slider-container{
   position: absolute;
-  top: 20%;
-  left: 35%;
+  
+  left: 40%;
+  bottom: 30%;
   z-index:999; 
   
 }
