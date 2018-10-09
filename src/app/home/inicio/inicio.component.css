@@ -1,0 +1,22 @@
+.contenedor{
+
+   position: relative; 
+   left: 19%;
+}
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+    
+  
+    
+
+}
+#demo{
+
+    position:relative;
+    left: 19%;
+    margin-top: 20px;
+    
+
+}
+
