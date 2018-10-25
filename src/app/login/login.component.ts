@@ -9,13 +9,10 @@ import { AuthserviceService } from '../services/authservice.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public authservice:AuthserviceService) 
-  { 
-    
-  }
+ 
 
   ngOnInit() {
-    this.authservice.login();
+  
  
   }
 
