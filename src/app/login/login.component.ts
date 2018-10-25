@@ -11,11 +11,11 @@ export class LoginComponent implements OnInit {
 
   constructor(public authservice:AuthserviceService) 
   { 
-    this.authservice.login();
+    
   }
 
   ngOnInit() {
-  
+    this.authservice.login();
  
   }
 
