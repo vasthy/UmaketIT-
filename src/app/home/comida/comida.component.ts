@@ -55,7 +55,7 @@ precio: number;
   }
 
   ngOnInit() {this.comidaService.getComida().subscribe(comidas => {
-  //  this.comidas = comidas;
+    this.comidas = comidas;
       console.log(comidas);
     });
 
