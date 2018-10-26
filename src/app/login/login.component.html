@@ -11,27 +11,27 @@
   		<h1 style="color: white; text-align: center;">INICIAR SESION</h1><hr><br>
   		
   	</div>
-  	<form action="" class="slider-form">
-  		<div class="form-group">
-        <label style="color: white;">Usuario: <br> 
-          <input  style="width: 300px;" type="text" name="" placeholder="Nombre de usuario" class="form-control" requierd>
-        </label>
-  		</div><br>
-
-  		<div class="form-group">
-        <label style="color: white;"> Contrasena: <br>
-          <input  style="width: 300px; " type="password" name="" placeholder="Ingrese su contrasena" class="form-control" AutoSize="true" required>
+  	<form action="" class="slider-form" style=" position:relative; left: 14%; ">
+      <div class="form-group">
+        <label style="color: white;  ">Usuario: <br> 
+          <input  style="width: 300px;  " type="text" name="" placeholder="Nombre de usuario" class="form-control" requierd>
         </label>
   		</div>
 
+  		<div class="form-group">
+        <label style="color: white; "> Contrasena: <br>
+          <input  style="width: 300px;  " type="password" name="" placeholder="Ingrese su contrasena" class="form-control" AutoSize="true" required>
+        </label>
+  		</div><br><br>
+
   		<label style="color: white;">
-        <input type="checkbox" checked="checked" name="remember"> Remember me
+        <input type="checkbox" checked="checked" name="remember" style="left: 30%;"> Remember me
       </label>
 	
 	
 	<div class="botones">
-		<button type="button" class="btn btn-primary" style="position:relative; left: 10%;" id="Iniciar" routerLink="/home/inicio" routerLinkActive="active">Iniciar Sesion</button>
-    <button type="button" class="btn btn-primary" style="position:relative; left: 20%;" id="Registrate" onclick="document.getElementById('M').style.display='block'">Registrate</button>
+		<button type="button" class="btn btn-primary" style="position:relative; left: 1%;" id="Iniciar" routerLink="/home/inicio" routerLinkActive="active" >Iniciar Sesion</button>
+    <button type="button" class="btn btn-primary" style="position:relative; left: 1%;" id="Registrate" onclick="document.getElementById('M').style.display='block'">Registrate</button>
 	</div>
   	</form>
 
@@ -51,16 +51,16 @@
       		<p>Por favor rellenar todos los campos </p>
       	</div><br>
       <label for="uname"><b>Nombre de Usuario</b></label>
-      <input type="text" placeholder="Nombre de Usuario" name="usuario" required><br>
+      <input type="text" placeholder="Nombre de Usuario" name="usuario" id="usuario" required><br>
 
       <label for="Email"><b>Email</b></label><br>
-      <input type="text" placeholder="Ingrese su email" name="email" required><br>
+      <input type="text" placeholder="Ingrese su email" name="email" id="email" required><br>
 
       <label for="psw"><b>Contrasena</b></label><br>
-      <input type="password" placeholder="Ingrese contrasena" name="contra" required><br>
+      <input type="password" placeholder="Ingrese contrasena" name="contra" id="contra" required><br>
 
       <label for="psw"><b>Repita la Contrasena</b></label><br>
-      <input type="password" placeholder="Repita la contrasena" name="Rcontra" required><br>
+      <input type="password" placeholder="Repita la contrasena" name="Rcontra" id="Rcontra" required><br>
         <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label><br>
@@ -80,6 +80,11 @@
   
 </div>
 
+
+
+
+
+
 <script>
 // Get the modal
 var modal = document.getElementById('M');
@@ -92,3 +97,4 @@ window.onclick = function(event) {
     }
 }
 </script>
+

@@ -76,7 +76,8 @@ button:hover {
 
 .slider-container{
   position: absolute;
-  
+  display: flex;
+  align-items: flex-start;
   left: 40%;
   bottom: 30%;
   z-index:999; 

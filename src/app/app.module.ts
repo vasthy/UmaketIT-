@@ -16,7 +16,15 @@ import { DeliveryComponent } from './home/delivery/delivery.component';
 import { DesayunoComponent } from './home/desayuno/desayuno.component';
 import { PostresComponent } from './home/postres/postres.component';
 import { ContactanosComponent } from './home/contactanos/contactanos.component';
+import { auth } from 'firebase/app';
 
+//imports de firebase
+import {AngularFireModule} from '@angular/fire';
+
+import {environment} from '../environments/environment';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AuthserviceService} from '../app/services/authservice.service';
 
 
 const appRoutes: Routes=[
@@ -60,7 +68,8 @@ const appRoutes: Routes=[
     DeliveryComponent,
     DesayunoComponent,
     PostresComponent,
-    ContactanosComponent
+    ContactanosComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -69,9 +78,15 @@ const appRoutes: Routes=[
       appRoutes,
       {enableTracing:true}
  
-      )
+      ),
+      AngularFireModule.initializeApp(environment.firebase),
+      AngularFirestoreModule,
+      AngularFireAuthModule
+      
   ],
-  providers: [],
+  providers: [
+    AuthserviceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

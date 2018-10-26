@@ -1,11 +1,11 @@
 <div class="container" style="position:relative;">
-    <div class="card" style="background-color:white; position: relative; left: 15%;">
+    <div class="card" style="background-color:white; left: 15%;">
         <h3 style="color: black; text-align: center;">LOS POSTRES DEL MOMENTO : </h3>
     </div><br>
    
   
       <div class="row">
-        <div class="col-sm-4"*ngFor="let postre of Postres">
+        <div class="col-sm-4"*ngFor="let postre of Postres" style="left:15%;">
           <div class="card" style="max-width: auto; background-color: white; opacity: 1;">
             <div class="card-body" >
               <h5 class="card-title" style="color: black;">{{postre.nombre}}</h5>
@@ -20,9 +20,9 @@
               <button class="w3-button" style="background-color:#610b0b; color:white;"> Eliminar </button>
                 <div id="id01" class="w3-modal fle" style="max-width: auto">
                   <div class="w3-modal-content w3-animate-zoom">
-                    <header class="w3-container w3-teal">
+                    <header class="w3-container" style="background-color:black;" >
                       <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                      <h2>Ingredientes</h2>
+                      <h2 style="color: white;">Ingredientes</h2>
                     </header>
                     <div class="w3-container" >
                      <p style="color: black;" >ingredientes</p>
