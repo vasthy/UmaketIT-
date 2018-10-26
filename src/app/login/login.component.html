@@ -30,7 +30,7 @@
 	
 	
 	<div class="botones">
-		<button type="button" class="btn btn-primary" style="position:relative; left: 1%;" id="Iniciar" routerLink="/home/inicio" routerLinkActive="active" >Iniciar Sesion</button>
+		<button type="button" class="btn btn-primary" style="position:relative; left: 1%;" id="Iniciar" routerLink="/home/inicio" routerLinkActive="active" (click)=login()>Iniciar Sesion</button>
     <button type="button" class="btn btn-primary" style="position:relative; left: 1%;" id="Registrate" onclick="document.getElementById('M').style.display='block'">Registrate</button>
 	</div>
   	</form>
@@ -46,7 +46,7 @@
 
       <div class="container">
 
-      	<div>
+      	<div >
       		<h1>Registrarse</h1>
       		<p>Por favor rellenar todos los campos </p>
       	</div><br>
@@ -65,6 +65,7 @@
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label><br>
       <button type="submit">Crear cuenta</button>
+      
       
     </div>
 

@@ -25,6 +25,7 @@ import {environment} from '../environments/environment';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthserviceService} from '../app/services/authservice.service';
+import { ComidaService } from './services/Comida.service';
 
 
 const appRoutes: Routes=[
@@ -85,7 +86,8 @@ const appRoutes: Routes=[
       
   ],
   providers: [
-    AuthserviceService
+    AuthserviceService,
+    ComidaService
   ],
   bootstrap: [AppComponent]
 })
