@@ -6,9 +6,9 @@
     <li><img src="assets/Img/16.jpg" ></li>
   </ul>
 
-  <div class="slider-container card" style="background-color:black; opacity:0.8; width:30%; left: 35%;" >
+  <div class="slider-container card" style="background-color:black; opacity:0.8; width:30%; left: 35%; border-radius: 5%;" >
   	<div class="slider-title">
-  		<h1 style="color: white; text-align: center;">INICIAR SESION</h1><hr><br>
+  		<h1 style="color: white;position: relative; left: 30%;">INICIAR SESION</h1><hr><br>
   		
   	</div>
   	<form action="" class="slider-form" style=" position:relative; left: 14%; ">
@@ -22,22 +22,23 @@
         <label style="color: white; "> Contrasena: <br>
           <input  style="width: 300px;  " type="password" name="" placeholder="Ingrese su contrasena" class="form-control" AutoSize="true" required>
         </label>
-  		</div><br><br>
+  		</div><br>
 
   		<label style="color: white;">
         <input type="checkbox" checked="checked" name="remember" style="left: 30%;"> Remember me
       </label>
 	
-	
 	<div class="botones">
-		<button type="button" class="btn btn-primary" style="position:relative; left: 1%;" id="Iniciar" routerLink="/home/inicio" routerLinkActive="active" (click)=login()>Iniciar Sesion</button>
-    <button type="button" class="btn btn-primary" style="position:relative; left: 1%;" id="Registrate" onclick="document.getElementById('M').style.display='block'">Registrate</button>
-	</div>
-  	</form>
+		<button type="button" class="btn btn-primary" style="position:relative; left: 1%;" id="Iniciar" (click)="Googlelogin()" >Iniciar Sesion</button>
+    <button type="button" class="btn btn-primary" style="position:relative; left: 8%;" id="Registrate" onclick="document.getElementById('M').style.display='block'">Registrate</button>
+	</div><br>
+    </form>
 
-  	<div id="M" class="modal">
+    
+    
+  	<div id="M" class="modal" style="widows: 10%;">
   
-      <form class="modal-content animate" action="/action_page.php">
+      <form class="modal-content animate" >
       <div class="imgcontainer">
       <span onclick="document.getElementById('M').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="assets/Img/logo.png" alt="Avatar" class="avatar">
@@ -46,7 +47,7 @@
 
       <div class="container">
 
-      	<div >
+      	<div>
       		<h1>Registrarse</h1>
       		<p>Por favor rellenar todos los campos </p>
       	</div><br>
@@ -57,15 +58,14 @@
       <input type="text" placeholder="Ingrese su email" name="email" id="email" required><br>
 
       <label for="psw"><b>Contrasena</b></label><br>
-      <input type="password" placeholder="Ingrese contrasena" name="contra" id="contra" required><br>
+      <input type="password" placeholder="Ingrese contrasena" name="contra" id="password" required><br>
 
       <label for="psw"><b>Repita la Contrasena</b></label><br>
       <input type="password" placeholder="Repita la contrasena" name="Rcontra" id="Rcontra" required><br>
         <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label><br>
-      <button type="submit">Crear cuenta</button>
-      
+      <button type="submit"(click)="CrearUser()">Crear cuenta</button>
       
     </div>
 
@@ -82,7 +82,26 @@
 </div>
 
 
-
+<script>
+firebase.auth().createUserWithEmailAndPassword(email,password).then(credentials =>{
+  //Significa que lo creo bien
+  //Llamar servicio usuario y crearlo 
+})
+ firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // [START_EXCLUDE]
+        if (errorCode == 'auth/weak-password') {
+          alert('The password is too weak.');
+        } else {
+          alert(errorMessage);
+        }
+        console.log(error);
+        // [END_EXCLUDE]
+      });
+      // [
+</script>
 
 
 
