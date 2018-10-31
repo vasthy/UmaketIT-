@@ -1,11 +1,11 @@
 export interface Comida{
-    id?: String; //el ? indica que es una propiedad opcional
-    name?: String;
-    description?: String;
+    id?: string; //el ? indica que es una propiedad opcional
+    name?: string;
+    description?: string;
     price?: number;
-    image?: String;
+    image?: string;
     disponibilidad?: boolean;
-    tipo?:String;
+    tipo?:string;
 
 
 }

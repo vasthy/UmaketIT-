@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-class desayuno {
-  precio: number;
-  nombre: string;
-  imagen: string;
-
-}
-
+import { Comida } from 'src/app/models/comida';
+import { ComidaService } from '../../services/Comida.service';
 
 @Component({
   selector: 'app-desayuno',
@@ -15,27 +10,20 @@ class desayuno {
 })
 export class DesayunoComponent implements OnInit {
 
-  Desayunos: Array<desayuno> = 
-  [
-    {
-      "precio":1,
-      "nombre":"DESAYUNO 1",
-      "imagen":"desayuno1"
-    },
-    {
-      "precio":2,
-      "nombre":"DESAYUNO 2",
-      "imagen":"desayuno2"
-    }, {
-      "precio":3,
-      "nombre":"DESAYUNO 3",
-      "imagen":"desayuno3"
-    },
-  ]
+  comidas = [];
+  precio: number;
+  nombre: string;
+  imagen: string;
+  id:number;
+  tipo: string;
 
-  constructor() { }
 
-  ngOnInit() {
+  constructor(public comidaService: ComidaService) { }
+
+  ngOnInit() {this.comidaService.getComida().subscribe(comidas => {
+    this.comidas = comidas;
+      console.log(comidas);
+    });
   }
 
 }

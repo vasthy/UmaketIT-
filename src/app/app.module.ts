@@ -26,6 +26,8 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthserviceService} from '../app/services/authservice.service';
 import { ComidaService } from './services/Comida.service';
+//form builder
+import { FormBuilder, FormsModule, Validators, FormGroup, ReactiveFormsModule} from '@angular/forms';
 
 
 const appRoutes: Routes=[
@@ -74,6 +76,8 @@ const appRoutes: Routes=[
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(
 
       appRoutes,
@@ -82,7 +86,8 @@ const appRoutes: Routes=[
       ),
       AngularFireModule.initializeApp(environment.firebase),
       AngularFirestoreModule,
-      AngularFireAuthModule
+      AngularFireAuthModule,
+      
       
   ],
   providers: [
