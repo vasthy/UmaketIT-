@@ -5,30 +5,32 @@
  
 
     <div class="row">
-    
-      <div class="col-sm-4"*ngFor="let comida of comidas" style="left:15%;">
+      
+        <div class="col-sm-4"*ngFor="let comida of comidas" style="left:15%;">
+           <div *ngIf = "comida.tipo == 'almuerzo' ">
          
-        <div class="card" style="max-width: auto; background-color: white; opacity: 1;">
-          <div class="card-body">
+          <div class="card" style="max-width: auto; background-color: white; opacity: 1;">
+           <div class="card-body">
           
-            <h5 class="card-title" style="color: black;">{{comida.nombre}}</h5>
-            <hr>
-            <img src="assets/Img/Img Cards/{{comida.imagen}}.jpg">
-            <hr>
-            <div class="w3-container" >
-              <button onclick="document.getElementById('id01').style.display='block'" class="w3-button" style="background-color:#610b0b; color:white;" >Informate</button>
-              <br><br>
-              <button class="w3-button" style="background-color:#610b0b; color:white;"> Comprar </button>
-              <br><br>
-              <button class="w3-button" style="background-color:#610b0b; color:white;"> Eliminar </button>
-              <div id="id01" class="w3-modal fle" style="max-width: auto"*ngFor="let comida of Comidas">
-                <div class="w3-modal-content w3-animate-zoom"  >
-                  <header class="w3-container" style="background-color:black;">
+              <h5 class="card-title" style="color: black;">{{comida.nombre}}</h5>
+              <hr>
+              <img src="{{comida.imagen}}">
+              <hr>
+              <div class="w3-container" >
+                <button onclick="document.getElementById('id01').style.display='block'" class="w3-button" style="background-color:#610b0b; color:white;" >Informate</button>
+                <br><br>
+                <button class="w3-button" style="background-color:#610b0b; color:white;"> Comprar </button>
+                <br><br>
+                <button class="w3-button" style="background-color:#610b0b; color:white;"> Eliminar </button>
+              
+                <div id="id01" class="w3-modal fle" style="max-width: auto">
+                 <div class="w3-modal-content w3-animate-zoom"  >
+                    <header class="w3-container" style="background-color:black;">
                     <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
                     <h2 style="color: white;">INFORMACION SOBRE EL PLATO </h2>
-                  </header>
-                  <div class="w3-container" >
-                   <p style="color: black;">{{comida.precio}}</p>
+                     </header>
+                   <div class="w3-container" >
+                     <p style="color: black;">{{comida.precio}}</p>
                    
                   
                   </div>
@@ -40,6 +42,7 @@
             </div>
           </div>
         </div>
+       </div>
       </div>
   
  

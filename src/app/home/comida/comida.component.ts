@@ -1,17 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Comida } from 'src/app/models/comida';
 import { ComidaService } from '../../services/Comida.service';
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 
-/*
-class comida {
-  comidas = [];
-    precio: number;
-    nombre: string;
-    imagen: string;
-    id:number;
 
-}
-*/
+
 @Component({
   selector: 'app-comida',
   templateUrl: './comida.component.html',
@@ -19,36 +12,25 @@ class comida {
 })
 export class ComidaComponent implements OnInit {
 comidas = [];
-precio: number;
+    precio: number;
     nombre: string;
     imagen: string;
     id:number;
- /*
-  Comidas: Array<comida> = 
-  [
-    {
-      
-      "nombre":"PASTICHO",
-      "imagen":"pasticho",
-      "precio":200,"id":1
-      
-      
-    },
-    {
-      
-      "nombre":"PAELLA",
-      "imagen":"paella",
-      "precio":300,"id":2
-      
-    }, {
-      
-      "nombre":"PABELLON",
-      "imagen":"pabellon",
-      "precio":150,"id":3,
-    },
-  ]*/
+    tipo: string;
+    // comidaForm:FormGroup; /// esto iria en la vista de admin
 
-  constructor(private comidaService: ComidaService) { 
+ 
+
+  constructor(public comidaService: ComidaService /*,private fb:FormBuilder*/ ) {
+
+    //esto iria en la vista de admin para crear un form y agregar comidas
+    /*
+    this.comidaForm=fb.group({
+      nombre: ["",Validators.required],
+      imagen:["",Validators.required],
+      tipo: ["",Validators.required],
+
+    })*/
  
 
 
