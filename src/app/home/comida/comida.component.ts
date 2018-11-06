@@ -12,35 +12,46 @@ import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class ComidaComponent implements OnInit {
 comidas = [];
+comidasFiltradas = [];
     precio: number;
     nombre: string;
     imagen: string;
     id:number;
     tipo: string;
-    // comidaForm:FormGroup; /// esto iria en la vista de admin
+    comidaForm:FormGroup; /// esto iria en la vista de admin
 
  
-
-  constructor(public comidaService: ComidaService /*,private fb:FormBuilder*/ ) {
+  
+  constructor(public comidaService: ComidaService ,private fb:FormBuilder) {
 
     //esto iria en la vista de admin para crear un form y agregar comidas
-    /*
+   
     this.comidaForm=fb.group({
       nombre: ["",Validators.required],
       imagen:["",Validators.required],
       tipo: ["",Validators.required],
+      prrecio: ["",Validators.required]
 
-    })*/
+
+    })
  
 
 
   }
+  private buildForm(){
+    
+  }
 
-  ngOnInit() {this.comidaService.getComida().subscribe(comidas => {
+  ngOnInit() { this.comidaService.getComida().subscribe(comidas => {
     this.comidas = comidas;
-      console.log(comidas);
-    });
-
+    console.log(comidas);
+    this.comidasFiltradas = [];
+    this.comidasFiltradas = this.comidas.filter(comida => {
+      if (comida.tipo == 'almuerzo') {
+        return comida;
+      }
+    })
+  });
   }
 
   }

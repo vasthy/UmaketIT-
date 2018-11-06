@@ -12,20 +12,28 @@ import { ComidaService } from '../../services/Comida.service';
 export class PostresComponent implements OnInit {
 
   comidas = [];
+  comidasFiltradas = [];
   precio: number;
   nombre: string;
   imagen: string;
-  id:number;
+  id: number;
   tipo: string;
 
 
   constructor(public comidaService: ComidaService) { }
 
-  ngOnInit() {this.comidaService.getComida().subscribe(comidas => {
-    this.comidas = comidas;
+  ngOnInit() {
+    this.comidaService.getComida().subscribe(comidas => {
+      this.comidas = comidas;
       console.log(comidas);
+      this.comidasFiltradas = [];
+      this.comidasFiltradas = this.comidas.filter(comida => {
+        if (comida.tipo == 'postre') {
+          return comida;
+        }
+      })
     });
+
+
   }
-
-
 }
