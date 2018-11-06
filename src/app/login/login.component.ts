@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
  
   this.authservice.password=this.passwords;
   this.authservice.email=this.emails;
- 
   
   }
 
@@ -39,8 +38,6 @@ export class LoginComponent implements OnInit {
       }).catch(err=> console.log(err.message));
    }
 
-   CrearUser(){
-     this.authservice.CreateUser();
-     
-   }
+ 
+  
 }

@@ -14,13 +14,13 @@
   	<form action="" class="slider-form" style=" position:relative; left: 14%; ">
       <div class="form-group">
         <label style="color: white;  ">Usuario: <br> 
-          <input  style="width: 300px;  " type="text" name="" placeholder="Nombre de usuario" class="form-control" requierd>
+          <input  style="width: 300px;"id="email2" type="text" name="" placeholder="Nombre de usuario" class="form-control" requierd>
         </label>
   		</div>
 
   		<div class="form-group">
         <label style="color: white; "> Contrasena: <br>
-          <input  style="width: 300px;  " type="password" name="" placeholder="Ingrese su contrasena" class="form-control" AutoSize="true" required>
+          <input  style="width: 300px;  " id="password2" type="password" name="" placeholder="Ingrese su contrasena" class="form-control" AutoSize="true" required>
         </label>
   		</div><br>
 
@@ -29,12 +29,13 @@
       </label>
 	
 	<div class="botones">
-		<button type="button" class="btn btn-primary" style="position:relative; left: 1%;" id="Iniciar" (click)="Googlelogin()" >Iniciar Sesion</button>
+		<button type="button" class="btn btn-primary" style="position:relative; left: 1%;" id="Iniciar"(click)="LoginEmPw()" >Iniciar Sesion</button>
     <button type="button" class="btn btn-primary" style="position:relative; left: 8%;" id="Registrate" onclick="document.getElementById('M').style.display='block'">Registrate</button>
-	</div><br>
+    <button type="button" class="btn btn-social btn-google" id="Google" (click)="Googlelogin()" >Google</button>
+  </div><br>
     </form>
-
     
+   
     
   	<div id="M" class="modal" style="widows: 10%;">
   
@@ -43,7 +44,7 @@
       <span onclick="document.getElementById('M').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="assets/Img/logo.png" alt="Avatar" class="avatar">
       </div>
-
+      
 
       <div class="container">
 

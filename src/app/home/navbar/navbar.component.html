@@ -1,26 +1,17 @@
 
 
 <div id="mySidenav" class="sidenav" style="opacity:0.8;">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a routerLink="/home/inicio" routerLinkActive="active">INICIO</a>
-    <li>
-      <a>COMIDA</a>
-      <ul>
-        <li>
-          <a routerLink="/home/desayuno" routerLinkActive="active">DESAYUNO</a>
-        </li>  
-        <li>
-          <a routerLink="/home/almuerzo" routerLinkActive="active" >ALMUERZO</a>
-        </li>
-        <li>
-            <a routerLink="/home/postre" routerLinkActive="active">POSTRES</a>
-          </li>
-      
-      </ul>
-    </li>   
-    <a routerLink="/home/delivery" routerLinkActive="active">DELIVERY</a>
-    
-    <a routerLink="/home/contactanos" routerLinkActive="active">CONTACTANOS</a>
+    <img src="{{name.photoURL}}" style="width:25%; border-radius: 50%; position: relative; left: 35%; ">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a><br><br><hr>
+    <a routerLink="/home/inicio" routerLinkActive="active">Inicio <i class="fa fa-home" aria-hidden="true"></i></a>
+      <a data-toggle="collapse" data-target="#products"> Comidas <i class="fa fa-cutlery" aria-hidden="true"></i></a>
+      <ul class="sub-menu collapse" id="products">
+        <a routerLink="/home/desayuno" routerLinkActive="active">Desayuno</a>
+        <a routerLink="/home/almuerzo" routerLinkActive="active" >Almuerzo</a>
+        <a routerLink="/home/postre" routerLinkActive="active">Postres</a>     
+      </ul> 
+    <a routerLink="/home/delivery" routerLinkActive="active"> Delivery <i class="fa fa-car fa-sm"></i> </a>
+    <a routerLink="/home/contactanos" routerLinkActive="active">Contactanos <i class="fa fa-envelope" style="width:30%;"></i></a>
   </div>
 
   <div  id="main">
@@ -32,21 +23,23 @@
           
       </ul>
       <ul class="navbar-nav ">
-          <li class="col-sm-1"></li>
+         
+          
            <!-- Dropdown -->
+           
            <li class="nav-item dropdown" >
-              <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown" style="color:white;">
+              <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown" style="color:white;"><i class="fa fa-user-o" aria-hidden="true"></i>
               {{ name.displayName }}</a>
-             
               <div class="dropdown-menu">
             
-                <a  routerLink="/home/CambioClave" routerLinkActive="active" class="dropdown-item" >Cambio de clave</a>
-                <a  routerLink="/home/historial" routerLinkActive="active" class="dropdown-item" >Historial de compra</a>
-                <a routerLink="/home/compras" routerLinkActive="active" class="dropdown-item" >Compras</a>
-                <a  routerLink="/login" routerLinkActive="active"class="dropdown-item" >salir </a>
+                <a  routerLink="/home/CambioClave" routerLinkActive="active" class="dropdown-item" >Cambio de clave <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                <a  routerLink="/home/historial" routerLinkActive="active" class="dropdown-item" >Historial de compra <i class="fa fa-history" aria-hidden="true"></i></a>
+                <a routerLink="/home/compras" routerLinkActive="active" class="dropdown-item" >Compras <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                <a  (click)="Logout()" class="dropdown-item" >salir <i class="fa fa-signout" aria-hidden="true"></i> </a>
 
               </div>
             </li>
+            
         </ul>
     </nav>
         <br><br>

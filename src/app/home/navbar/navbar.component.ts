@@ -13,8 +13,7 @@ export class NavbarComponent implements OnInit {
  public name:any;
   public state: string='';
 
-  constructor(public authservice:AuthserviceService, public router:Router) 
-  { 
+  constructor(public authservice:AuthserviceService, public router:Router) { 
     this.authservice.afAuth.authState.subscribe(auth =>{
       if(auth){
         this.name=auth;
@@ -22,6 +21,10 @@ export class NavbarComponent implements OnInit {
     });
   }
 
+  Logout(){
+    this.authservice.logout();
+  
+  }
 
   ngOnInit() {
   }
