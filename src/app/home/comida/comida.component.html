@@ -6,37 +6,46 @@
 
 
   </div><br>
+  <!--Comienzo de intento de form builder-->
+ 
   <div id="id02" class="w3-modal fle" style="max-width: auto">
     <div class="w3-modal-content w3-animate-zoom">
       <header class="w3-container" style="background-color:black;">
         <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-        <h2 style="color: white;">AGREGAR PLATO PLATO </h2>
+        <h2 style="color: white;">AGREGAR PLATO </h2>
       </header>
       <div class="w3-container">
-        <form  [formGroup]="adForm" novalidate>
-
-          <input class="input" type="text"
-                 formControlName="nombre"
-                 (change)="saveAdChanges()"
-                 [ngClass]="{
-                              'is-success' :  adForm.get('nombre').valid &&  adForm.get('nombre').dirty,
-                              'is-danger'  :  !adForm.get('nombre').valid
-                            }">
-        
-          <p class="error is-danger" [hidden]="adForm.get('nombre').valid">
-            Debe insertar un nombre.
-          </p>
-        
+        <form [formGroup]="comidaForm">
+          <label>Nombre</label>
+          <input type="text" class="form-control" id="nombre"   formControlName = "nombre"  name="nombre"> 
+          <label>Descripcion</label>
+          <input type="text" class="form-control" id="descripcion"  formControlName = "descripcion" name="descripcion">
+          <label>Tipo</label>
+          <input type="text" class="form-control" id="tipo"  formControlName = "tipo" name="tipo">
+          <label>Precio</label>
+          <input type="text" class="form-control" id="precio"  formControlName = "precio" name="precio">
+          <label>Imagen</label>
+          <br>
+          <input class="file-input" type="file"  formControlName = "imagen" name="imagen" (change)="uploadFile($event)">
+          <br>
+          <div *ngIf="uploadPercent | async as pct">
+            <progress 
+                  [value]="pct" 
+                  max="100">        
+            </progress>
+              {{ pct | number }}%           
+            </div>	
+          <br>
+          <button (click)="addComida()" type="Submit" class="button-primary" [disabled]="!comidaForm.valid || !urlReady" > Submit</button>
         </form>
 
 
       </div>
-      <footer class="w3-container">
-        <p style="color: black;">Aratxo</p>
-      </footer>
+      
     </div>
   </div>
 
+  <!---Fin de intento de form builder-->
 
   <div class="row">
 

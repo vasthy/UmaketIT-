@@ -29,7 +29,7 @@ import { AuthserviceService} from '../app/services/authservice.service';
 import { ComidaService } from './services/Comida.service';
 //form builder
 import { FormBuilder, FormsModule, Validators, FormGroup, ReactiveFormsModule} from '@angular/forms';
-
+import { BsModalService } from 'ngx-bootstrap/modal';
 
 const appRoutes: Routes=[
 
@@ -79,6 +79,7 @@ const appRoutes: Routes=[
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    BsModalService,
     RouterModule.forRoot(
 
       appRoutes,
