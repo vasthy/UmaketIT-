@@ -66,7 +66,7 @@
         <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label><br>
-      <button type="submit"(click)="CrearUser()">Crear cuenta</button>
+      <button type="submit">Crear cuenta</button>
       
     </div>
 
@@ -81,29 +81,6 @@
 
   
 </div>
-
-
-<script>
-firebase.auth().createUserWithEmailAndPassword(email,password).then(credentials =>{
-  //Significa que lo creo bien
-  //Llamar servicio usuario y crearlo 
-})
- firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // [START_EXCLUDE]
-        if (errorCode == 'auth/weak-password') {
-          alert('The password is too weak.');
-        } else {
-          alert(errorMessage);
-        }
-        console.log(error);
-        // [END_EXCLUDE]
-      });
-      // [
-</script>
-
 
 
 <script>

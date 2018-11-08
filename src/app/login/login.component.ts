@@ -10,8 +10,7 @@ import {  Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
  
-  emails:string;
-  passwords: string;
+ 
 
   constructor(public authservice:AuthserviceService, public router:Router) 
   { 
@@ -25,8 +24,7 @@ export class LoginComponent implements OnInit {
  // al servicio de usuarios 
  // implementar un router 
  
-  this.authservice.password=this.passwords;
-  this.authservice.email=this.emails;
+ 
   
   }
 
@@ -37,7 +35,6 @@ export class LoginComponent implements OnInit {
        this.router.navigateByUrl('/home/inicio');
       }).catch(err=> console.log(err.message));
    }
-
  
   
 }
