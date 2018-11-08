@@ -29,7 +29,8 @@ import { AuthserviceService} from '../app/services/authservice.service';
 import { ComidaService } from './services/Comida.service';
 //form builder
 import { FormBuilder, FormsModule, Validators, FormGroup, ReactiveFormsModule} from '@angular/forms';
-import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalService, ModalModule } from 'ngx-bootstrap/modal';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 
 const appRoutes: Routes=[
 
@@ -79,7 +80,7 @@ const appRoutes: Routes=[
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    BsModalService,
+    ModalModule.forRoot(),
     RouterModule.forRoot(
 
       appRoutes,
@@ -89,12 +90,14 @@ const appRoutes: Routes=[
       AngularFireModule.initializeApp(environment.firebase),
       AngularFirestoreModule,
       AngularFireAuthModule,
+      AngularFireStorageModule
       
       
   ],
   providers: [
     AuthserviceService,
-    ComidaService
+    ComidaService,
+    BsModalService
   ],
   bootstrap: [AppComponent]
 })

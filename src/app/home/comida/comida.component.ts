@@ -1,12 +1,13 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Comida } from 'src/app/models/comida';
 import { ComidaService } from '../../services/Comida.service';
+
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { Observable } from 'rxjs';
 import { AngularFireStorage, AngularFireUploadTask } from 'angularfire2/storage';
-import { finalize } from 'rxjs/operators';
+import { finalize, tap } from 'rxjs/operators';
 
 
 
@@ -36,7 +37,11 @@ export class ComidaComponent implements OnInit {
 
 
 
-  constructor(public comidaService: ComidaService, private storage: AngularFireStorage, private modalService: BsModalService, private fb: FormBuilder) {
+  constructor(
+    public comidaService: ComidaService,
+    private storage: AngularFireStorage,
+    private modalService: BsModalService,
+    private fb: FormBuilder) {
 
     //esto iria en la vista de admin para crear un form y agregar comidas
 
@@ -44,7 +49,7 @@ export class ComidaComponent implements OnInit {
       name: ["", Validators.required],
       image: ["", Validators.required],
       tipo: ["", Validators.required],
-      price: ["", Validators.required]
+      price: ["", Validators.required],
 
 
     })
@@ -66,6 +71,9 @@ export class ComidaComponent implements OnInit {
   }
   uploadFile(event) {
     const file = event.target.files[0];
+    if (!file) {
+      return;
+    }
     const filePath = 'foodImages/'.concat(file.name);
     const fileRef = this.storage.ref(filePath);
     const task = this.storage.upload(filePath, file);
@@ -74,14 +82,11 @@ export class ComidaComponent implements OnInit {
     this.uploadPercent = task.percentageChanges();
     // get notified when the download URL is available
     task.snapshotChanges().pipe(
-        finalize(() => {
-          fileRef.getDownloadURL().subscribe(url=>{
-            this.downloadURL = url;  
-            console.log("URL",this.downloadURL)
-            this.urlReady = true;
-          })
-          ;
-        } )
+      tap(() => {
+        fileRef.getDownloadURL().subscribe(url=>{
+          this.comidaForm.controls.image.setValue(url);
+        });
+      })
      )
     .subscribe()
   }

@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
       .then((res)=>{
         
        this.router.navigateByUrl('/home/inicio');
-      }).catch(err=> console.log(err.message));
+      }).catch(err=> console.error(err.message));// recordar .error para errores no .log
    }
 
  
