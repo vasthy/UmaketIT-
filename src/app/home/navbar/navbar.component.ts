@@ -16,8 +16,9 @@ export class NavbarComponent implements OnInit {
   constructor(public authservice:AuthserviceService, public router:Router) { 
     this.authservice.afAuth.authState.subscribe(auth =>{
       if(auth){
-        this.name=auth;
+        this.name = auth;
       }
+     // router.navigate(["login"])
     });
   }
 

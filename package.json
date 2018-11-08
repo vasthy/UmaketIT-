@@ -27,7 +27,9 @@
     "firebase": "^5.5.5",
     "firebaseui-angular": "^3.3.2",
     "mdbootstrap": "^4.5.12",
+    "ngx-bootstrap": "^3.1.1",
     "rxjs": "~6.2.0",
+    "rxjs-compat": "^6.3.3",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
