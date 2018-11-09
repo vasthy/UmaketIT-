@@ -14,8 +14,7 @@ import { UsuarioService } from '../../services/Usuarios.service';
 })
 export class NavbarComponent implements OnInit {
  public usuario:any;
- nombre:string;
- User: Users;
+
  
  
 
@@ -24,13 +23,12 @@ export class NavbarComponent implements OnInit {
       if(auth){
         this.usuario = auth;
         
-       }else if(this.User.uid){
-         this.usuario=auth.email;
-
        }
+// router.navigate(["login"])
+});
 
-     // router.navigate(["login"])
-    });
+
+  
 
     
   }
@@ -41,6 +39,8 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
+   
+    
   }
 
 }

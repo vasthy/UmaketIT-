@@ -1,7 +1,6 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
-import { Comida } from 'src/app/models/comida';
+import { Comida } from '../../models/comida';
 import { ComidaService } from '../../services/Comida.service';
-
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
@@ -21,7 +20,7 @@ export class ComidaComponent implements OnInit {
 
 
   comidasFiltradas = [];
-  precio: number;
+  precio: string;
   nombre: string;
   imagen: string;
   id?: number;
@@ -30,59 +29,27 @@ export class ComidaComponent implements OnInit {
 
   /// esto iria en la vista de admin
   comidaForm: FormGroup; 
-  modalRef: BsModalRef;
-  downloadURL: Observable<string>;
-  urlReady = false;
-  uploadPercent: Observable<number>;
+  
 
 
 
   constructor(public comidaService: ComidaService,private storage: AngularFireStorage,private modalService: BsModalService, private fb: FormBuilder) {
    //esto iria en la vista de admin para crear un form y agregar comidas
      this.comidaForm = fb.group({
-      name: ["", Validators.required],
-      image: ["", Validators.required],
+      nombre: ["", Validators.required],
+      descripcion:["", Validators.required],
       tipo: ["", Validators.required],
-      price: ["", Validators.required],
-
-
+      precio: ["", Validators.required],
+      imagen: ["", Validators.required],
     })
 }
 
-  onSubmit(value){
-    console.log("Form",value)
-    this.comidaForm.value.image_url = this.downloadURL;
-    this.comidaService.addComida(this.comidaForm.value)
-  }
-  openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
-  }
   addComida() {
-    this.comidaForm.value.imagen = this.imagen;
     console.log("Form", this.comidaForm.value)
-    this.comidaService.addComida(this.comidaForm.value)
+    this.comidaService.addComida(this.comidaForm.value);
+    this.comidaService.updateComida(this.comidaForm.value);
   }
-  uploadFile(event) {
-    const file = event.target.files[0];
-    if (!file) {
-      return;
-    }
-    const filePath = 'foodImages/'.concat(file.name);
-    const fileRef = this.storage.ref(filePath);
-    const task = this.storage.upload(filePath, file);
-    console.log("entre", file)
-    // observe percentage changes
-    this.uploadPercent = task.percentageChanges();
-    // get notified when the download URL is available
-    task.snapshotChanges().pipe(
-      tap(() => {
-        fileRef.getDownloadURL().subscribe(url=>{
-          this.comidaForm.controls.image.setValue(url);
-        });
-      })
-     )
-    .subscribe()
-  }
+  
 
   ngOnInit() {
     this.comidaService.getComida().subscribe(comidas => {
@@ -92,6 +59,7 @@ export class ComidaComponent implements OnInit {
       this.comidasFiltradas = this.comidas.filter(comida => {
         if (comida.tipo == 'almuerzo') {
           return comida;
+          console.log(comida);
         }
       })
     });

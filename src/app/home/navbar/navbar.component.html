@@ -1,17 +1,17 @@
 
 
 <div id="mySidenav" class="sidenav" style="opacity:0.8;">
-    <img src="{{name?.photoURL}}" style="width:25%; border-radius: 50%; position: relative; left: 35%; ">
+    <img src="{{usuario.photoURL}}" style="width:25%; border-radius: 50%; position: relative; left: 35%; ">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a><br><br><hr>
-    <a routerLink="/home/inicio" routerLinkActive="active">Inicio <i class="fa fa-home" aria-hidden="true"></i></a>
-      <a data-toggle="collapse" data-target="#products"> Comidas <i class="fa fa-cutlery" aria-hidden="true"></i></a>
+    <a routerLink="/home/inicio" routerLinkActive="active"> <i class="fa fa-home" aria-hidden="true"></i> Inicio</a>
+      <a data-toggle="collapse" data-target="#products"><i class="fa fa-cutlery" aria-hidden="true"></i>  Comidas </a>
       <ul class="sub-menu collapse" id="products">
         <a routerLink="/home/desayuno" routerLinkActive="active">Desayuno</a>
         <a routerLink="/home/almuerzo" routerLinkActive="active" >Almuerzo</a>
         <a routerLink="/home/postre" routerLinkActive="active">Postres</a>     
       </ul> 
-    <a routerLink="/home/delivery" routerLinkActive="active"> Delivery <i class="fa fa-car fa-sm"></i> </a>
-    <a routerLink="/home/contactanos" routerLinkActive="active">Contactanos <i class="fa fa-envelope" style="width:30%;"></i></a>
+    <a routerLink="/home/delivery" routerLinkActive="active"><i class="fa fa-car fa-sm"></i>  Delivery </a>
+    <a routerLink="/home/contactanos" routerLinkActive="active"> <i class="fa fa-envelope"></i> Contactanos</a>
   </div>
 
   <div  id="main">
@@ -24,8 +24,8 @@
       </ul>
       <ul class="navbar-nav ">
          <!-- Dropdown -->
-        <li class="nav-item dropdown" >
-              <a mclass="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown" style="color:white;"><i class="fa fa-user-o" aria-hidden="true"></i>
+        <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown" style="color:white;"><i class="fa fa-user-o" aria-hidden="true"></i>
               {{ usuario.displayName }}</a>
 
            

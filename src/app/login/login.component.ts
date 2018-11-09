@@ -80,7 +80,10 @@ export class LoginComponent implements OnInit {
   addUser() {
     console.log("Form", this.usuarioForm.value)
     this.UsuarioService.addUser(this.usuarioForm.value);
-    this.authservice.afAuth.auth.createUserWithEmailAndPassword(this.usuarioForm.value.email,this.usuarioForm.value.contrasena);
+    this.authservice.afAuth.auth.createUserWithEmailAndPassword(this.usuarioForm.value.email,this.usuarioForm.value.contrasena).then(user=>{
+      user.user.updateProfile({displayName: this.usuarioForm.value.nombre, photoURL:"https://firebasestorage.googleapis.com/v0/b/umakeit-3b4e1.appspot.com/o/imagenes%2Fuser_male2-256.png?alt=media&token=51fc8b39-08f4-4131-8140-ec7733d45a1e"})
+    });
+    
   }
 
   IniciarSesion(){
@@ -90,6 +93,17 @@ export class LoginComponent implements OnInit {
      this.router.navigateByUrl('/home/inicio');
     
    }).catch(err=> console.error(err.message));
+   var User= this.authservice.afAuth.auth.currentUser;
+
+   if(User!=null){
+     User.providerData.forEach(function (profile) {
+       console.log("Sign-in provider: " + profile.providerId);
+       console.log("  Provider-specific UID: " + profile.uid);
+       console.log("  Name: " + profile.displayName);
+       console.log("  Email: " + profile.email);
+       console.log("  Photo URL: " + profile.photoURL);
+     });
+   }
   }
       
   

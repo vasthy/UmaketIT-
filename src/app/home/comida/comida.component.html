@@ -11,7 +11,7 @@
   <div id="id02" class="w3-modal fle" style="max-width: auto">
     <div class="w3-modal-content w3-animate-zoom">
       <header class="w3-container" style="background-color:black;">
-        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
         <h2 style="color: white;">AGREGAR PLATO </h2>
       </header>
       
@@ -24,20 +24,11 @@
           <label>Tipo</label>
           <input type="text" class="form-control" id="tipo"  formControlName = "tipo" name="tipo">
           <label>Precio</label>
-          <input type="text" class="form-control" id="price"  formControlName = "price" name="price">
+          <input type="text" class="form-control" id="price"  formControlName = "precio" name="precio">
           <label>Imagen</label>
+          <input type="text" class="form-control" id="image"  formControlName = "imagen" name="imagen">      
           <br>
-          <input class="file-input" type="file"  formControlName = "imagen" name="imagen" (change)="uploadFile($event)">
-          <br>
-          <div *ngIf="uploadPercent | async as pct">
-            <progress 
-                  [value]="pct" 
-                  max="100">        
-            </progress>
-              {{ pct | number }}%           
-            </div>	
-          <br>
-          <button (click)="addComida()" type="Submit" class="button-primary" [disabled]="!comidaForm.valid || !urlReady" > Submit</button>
+          <button (click)="addComida()" type="Submit" class="button-primary" [disabled]="!comidaForm.valid" > Submit</button>
         </form>
 
 
@@ -59,6 +50,7 @@
             <h5 class="card-title" style="color: black;">{{comida.nombre}}</h5>
             <hr>
             <img src="{{comida.imagen}}">
+              
             <hr>
             <div class="w3-container">
               <button onclick="document.getElementById('id01').style.display='block'" class="w3-button" style="background-color:#610b0b; color:white;">Informate</button>
@@ -67,17 +59,14 @@
               <br><br>
               <button class="w3-button" style="background-color:#610b0b; color:white;"> Eliminar </button>
               <br><br>
-
-              <div id="id01" class="w3-modal fle" style="max-width: auto">
-                <div class="w3-modal-content w3-animate-zoom">
+              <div id="id01" class="w3-modal fle" style="max-width: auto ">
+                <div class="w3-modal-content w3-animate-zoom" >
                   <header class="w3-container" style="background-color:black;">
                     <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
                     <h2 style="color: white;">INFORMACION SOBRE EL PLATO </h2>
                   </header>
-                  <div class="w3-container">
-                    <p style="color: black;">{{comida.precio}}</p>
-
-
+                  <div class="w3-container" >
+                    <p style="color: black;">{{comidas.precio}}</p>
                   </div>
                   <footer class="w3-container">
                     <p style="color: black;">Aratxo</p>
