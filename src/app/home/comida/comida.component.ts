@@ -37,15 +37,9 @@ export class ComidaComponent implements OnInit {
 
 
 
-  constructor(
-    public comidaService: ComidaService,
-    private storage: AngularFireStorage,
-    private modalService: BsModalService,
-    private fb: FormBuilder) {
-
-    //esto iria en la vista de admin para crear un form y agregar comidas
-
-    this.comidaForm = fb.group({
+  constructor(public comidaService: ComidaService,private storage: AngularFireStorage,private modalService: BsModalService, private fb: FormBuilder) {
+   //esto iria en la vista de admin para crear un form y agregar comidas
+     this.comidaForm = fb.group({
       name: ["", Validators.required],
       image: ["", Validators.required],
       tipo: ["", Validators.required],
@@ -53,9 +47,8 @@ export class ComidaComponent implements OnInit {
 
 
     })
+}
 
-
-  }
   onSubmit(value){
     console.log("Form",value)
     this.comidaForm.value.image_url = this.downloadURL;

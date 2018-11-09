@@ -10,74 +10,55 @@
   	<div class="slider-title">
   		<h1 style="color: white;position: relative; left: 30%;">INICIAR SESION</h1><hr><br>
   		
-  	</div>
-  	<form action="" class="slider-form" style=" position:relative; left: 14%; ">
-      <div class="form-group">
-        <label style="color: white;  ">Usuario: <br> 
-          <input  style="width: 300px;"id="email2" type="text" name="" placeholder="Nombre de usuario" class="form-control" requierd>
-        </label>
-  		</div>
+    </div>
+    <div class="flex-container">
+        <form [formGroup]="loginForm" style="  left: 14%; ">S
+            <label class="label">Email</label>
+            <input type="text" class="form-control" id="email2"  formControlName = "email" name="email">
+            <label class="label">Contrasena</label>
+            <input type="password" class="form-control" id="contrasena2"  formControlName = "contrasena" name="contrasena">
+          
+        </form> 
+      
+    </div>
 
-  		<div class="form-group">
-        <label style="color: white; "> Contrasena: <br>
-          <input  style="width: 300px;  " id="password2" type="password" name="" placeholder="Ingrese su contrasena" class="form-control" AutoSize="true" required>
-        </label>
-  		</div><br>
-
-  		<label style="color: white;">
-        <input type="checkbox" checked="checked" name="remember" style="left: 30%;"> Remember me
-      </label>
-	
 	<div class="botones">
-		<button type="button" class="btn btn-primary" style="position:relative; left: 1%;" id="Iniciar"(click)="LoginEmPw()" >Iniciar Sesion</button>
+		<button type="button" class="btn btn-primary" style="position:relative; left: 1%;" id="Iniciar"(click)="IniciarSesion()" >Iniciar Sesion</button>
     <button type="button" class="btn btn-primary" style="position:relative; left: 8%;" id="Registrate" onclick="document.getElementById('M').style.display='block'">Registrate</button>
     <button type="button" class="btn btn-social btn-google" id="Google" (click)="Googlelogin()" >Google</button>
   </div><br>
-    </form>
-    
-   
-    
-  	<div id="M" class="modal" style="widows: 10%;">
   
-      <form class="modal-content animate" >
-      <div class="imgcontainer">
-      <span onclick="document.getElementById('M').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="assets/Img/logo.png" alt="Avatar" class="avatar">
+    
+    <div id="M" class="w3-modal fle" style="max-width: auto;">
+      <div class="w3-modal-content w3-animate-zoom" style="left: 20%; top: 17%;">
+        <header class="w3-container" style="background-color:black;">
+          <span onclick="document.getElementById('M').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+          <h2 style="color: white; text-align: center;"> Llenar todos los campos para registarse</h2>
+        </header>
+        
+        <div class="w3-container" >
+          <form [formGroup]="usuarioForm">
+            <label >Nombre</label>
+            <input type="text" class="form-control" id="nombre"   formControlName = "nombre"  name="nombre"> 
+            <label>Apellido</label>
+            <input type="text" class="form-control" id="apellido"  formControlName = "apellido" name="apellido">
+            <label>Email</label>
+            <input type="text" class="form-control" id="email"  formControlName = "email" name="email">
+            <label>Contrasena</label>
+            <input type="password" class="form-control" id="contrasena"  formControlName = "contrasena" name="contrasena">
+            <br>
+            <button (click)="addUser()" type="Submit" class="button-primary" [disabled]="!usuarioForm.valid" style=" position:relative; left: 40%;"> Submit</button>
+          </form>
+  
+  
+        </div>
+        
       </div>
-      
-
-      <div class="container">
-
-      	<div>
-      		<h1>Registrarse</h1>
-      		<p>Por favor rellenar todos los campos </p>
-      	</div><br>
-      <label for="uname"><b>Nombre de Usuario</b></label>
-      <input type="text" placeholder="Nombre de Usuario" name="usuario" id="usuario" required><br>
-
-      <label for="Email"><b>Email</b></label><br>
-      <input type="text" placeholder="Ingrese su email" name="email" id="email" required><br>
-
-      <label for="psw"><b>Contrasena</b></label><br>
-      <input type="password" placeholder="Ingrese contrasena" name="contra" id="password" required><br>
-
-      <label for="psw"><b>Repita la Contrasena</b></label><br>
-      <input type="password" placeholder="Repita la contrasena" name="Rcontra" id="Rcontra" required><br>
-        <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label><br>
-      <button type="submit">Crear cuenta</button>
-      
     </div>
+  </div>
 
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('M').style.display='none'" class="cancelbtn">Cancel</button>
+     
   
-    </div>
-    </form>
-  </div>
-  	
-  </div>
 
   
 </div>
