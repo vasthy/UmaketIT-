@@ -75,10 +75,7 @@ export class LoginComponent implements OnInit {
       }).catch(err=> console.error(err.message));// recordar .error para errores no .log
    }
 
-   onSubmit(value){
-    console.log("Form",value)
-    this.UsuarioService.addUser(this.usuarioForm.value)
-  }
+   
 
   addUser() {
     console.log("Form", this.usuarioForm.value)
