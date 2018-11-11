@@ -35,6 +35,8 @@ export class ComidaService {
     return this.comidas;
   }
 
+ 
+
   addComida(comida: Comida) {
     console.log('Nueva Comida');
     this.comidasCollection.add(comida);

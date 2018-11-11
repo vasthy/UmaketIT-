@@ -23,7 +23,7 @@ export class ComidaComponent implements OnInit {
   precio: string;
   nombre: string;
   imagen: string;
-  id?: number;
+  id: string;
   tipo: string;
   descripcion: string;
 
@@ -54,6 +54,7 @@ export class ComidaComponent implements OnInit {
   ngOnInit() {
     this.comidaService.getComida().subscribe(comidas => {
       this.comidas = comidas;
+      
       console.log(comidas);
       this.comidasFiltradas = [];
       this.comidasFiltradas = this.comidas.filter(comida => {
@@ -63,6 +64,11 @@ export class ComidaComponent implements OnInit {
         }
       })
     });
+  }
+
+  EliminarPlato(event, comida){
+    return this.comidaService.deleteComidas(comida);
+    
   }
 
 }
