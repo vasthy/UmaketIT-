@@ -43,7 +43,7 @@ export class UsuarioService {
   
     updateUser(Usuario: Users) {
       console.log('actualiza usuario');
-      this.usuarioDoc = this.afs.doc(`comida/${Usuario.password}`);
+      this.usuarioDoc = this.afs.doc(`Users/${Usuario.uid}`);
       this.usuarioDoc.update(Usuario);
   
     }

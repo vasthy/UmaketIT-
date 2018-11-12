@@ -66,9 +66,9 @@ export class ComidaComponent implements OnInit {
     });
   }
 
-  EliminarPlato(event, comida){
-    return this.comidaService.deleteComidas(comida);
-    
+  EliminarPlato(comida){
+    this.comidaService.deleteComidas(comida);
+    console.log(comida);
   }
 
 }

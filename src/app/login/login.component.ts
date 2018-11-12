@@ -41,13 +41,8 @@ export class LoginComponent implements OnInit {
    })
 
    this.loginForm=fb.group({
-    
     contrasena:["",Validators.required],
     email:["",Validators.required],
-    
-    
-   
-    
    })
 
 
@@ -82,15 +77,19 @@ export class LoginComponent implements OnInit {
     this.UsuarioService.addUser(this.usuarioForm.value);
     this.authservice.afAuth.auth.createUserWithEmailAndPassword(this.usuarioForm.value.email,this.usuarioForm.value.contrasena).then(user=>{
       user.user.updateProfile({displayName: this.usuarioForm.value.nombre, photoURL:"https://firebasestorage.googleapis.com/v0/b/umakeit-3b4e1.appspot.com/o/imagenes%2Fuser_male2-256.png?alt=media&token=51fc8b39-08f4-4131-8140-ec7733d45a1e"})
-    });
+    }).then(change=>{
+      this.router.navigateByUrl('/login');
+    }).catch(err=> console.log(err.message));
+    this.resetform();
     
   }
 
   IniciarSesion(){
     
     
-   this.authservice.afAuth.auth.signInAndRetrieveDataWithEmailAndPassword(this.loginForm.value.email,this.loginForm.value.contrasena).then((res)=>{
+    this.authservice.afAuth.auth.signInWithEmailAndPassword(this.loginForm.value.email,this.loginForm.value.contrasena).then((res)=>{
      this.router.navigateByUrl('/home/inicio');
+     this.resetform();
     
    }).catch(err=> console.error(err.message));
    var User= this.authservice.afAuth.auth.currentUser;
@@ -105,6 +104,11 @@ export class LoginComponent implements OnInit {
      });
    }
   }
+
+  resetform(){
+    this.usuarioForm.reset();
+  }
+  
       
   
 

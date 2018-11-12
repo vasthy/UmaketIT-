@@ -23,6 +23,7 @@ export class NavbarComponent implements OnInit {
       if(auth){
         this.usuario = auth;
         
+        
        }
 // router.navigate(["login"])
 });

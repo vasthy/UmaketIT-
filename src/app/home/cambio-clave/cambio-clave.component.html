@@ -5,27 +5,26 @@
     <h6 class="card-title" style=" text-align: center; color: black;">CAMBIO DE CONTRASENA</h6>
     <hr>
 
-      <form action="" class="slider-form" AutoSize="true">
-          <div class="form-group">
-            <label style="color:black; position: relative; left: 38%;" >Ingrese su contreseña anterior:
-              <input type="password"  class="form-control" style="width: 300px;" requierd>
-            </label>
-          </div>
+    <div class="w3-container" >
+      <form [formGroup]="usuarioForm">
+        <label >Ingrese su contraseña</label>
+        <input type="password" class="form-control" id="password"   formControlName = "password"  name="password"> 
+        <label>Ingrese su nueva contraseña</label>
+        <input type="password" class="form-control" id="password2"  formControlName = "password2" name="password2">
+        <label>Repita su nueva contraseña</label>
+        <input type="password" class="form-control" id="password3"  formControlName = "password3" name="password3">
+        
+        <br>
+      </form>
+      <button [disabled]="usuarioForm.value.password2!=usuarioForm.value.password3 || !usuarioForm.valid" class="w3-button" style="position:relative; left: 40%; background-color:#610b0b; color:white;" data-toggle="modal" data-target="#Modal" (click)="CambiarContrasena()">Guardar Cambios</button>
+
+
+    </div>
+     
       
-          <div class="form-group">
-            <label style="color: black; position: relative; left: 38%;">Ingresa su nueva contraseña:<input style="width: 300px;" type="password" class="form-control" AutoSize="true" required></label>
-          </div>
+    
       
-          <div class="form-group">
-              <label style="color: black; position: relative; left: 38%;">Repita su nueva contraseña:<input  style="width: 300px;"type="password"  class="form-control" AutoSize="true" required></label>
-            </div>
-      
-          </form><hr>
-      
-      <div class="container" >
-        <button  class="w3-button" style="position:relative; left: 40%; background-color:#610b0b; color:white;" data-toggle="modal" data-target="#Modal">Guardar Cambios</button>
-      
-      </div>
+    
   
   </div>
    
@@ -47,7 +46,7 @@
       </div>
          <!-- Modal footer -->
          <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="resetform()">Close</button>
         </div>
       </div>
 

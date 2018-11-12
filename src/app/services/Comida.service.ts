@@ -44,7 +44,7 @@ export class ComidaService {
 
   updateComida(comida: Comida) {
     console.log('actualiza Comida');
-    this.comidaDoc = this.afs.doc(`comida/${comida.id}`);
+    this.comidaDoc = this.afs.doc(`comidas/${comida.id}`);
     this.comidaDoc.update(comida);
 
   }
@@ -53,7 +53,9 @@ export class ComidaService {
 
   deleteComidas(comida: Comida) {
     console.log('borra Comida');
-    this.comidaDoc = this.afs.doc(`comida/${comida.id}`)
+    this.comidaDoc = this.afs.doc(`comidas/${comida.id}`)
     this.comidaDoc.delete();
+    console.log(comida);
+    
   }
 }
