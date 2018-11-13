@@ -16,6 +16,7 @@ import { DeliveryComponent } from './home/delivery/delivery.component';
 import { DesayunoComponent } from './home/desayuno/desayuno.component';
 import { PostresComponent } from './home/postres/postres.component';
 import { ContactanosComponent } from './home/contactanos/contactanos.component';
+import {BuscarComponent} from './home/buscar/buscar.component';
 import { auth } from 'firebase/app';
 
 
@@ -39,6 +40,7 @@ const appRoutes: Routes=[
 
       children:[
         {path:'almuerzo', component: ComidaComponent},
+        {path:'buscar', component: BuscarComponent},
         {path: 'historial', component: HistorialComprasComponent},
         {path:'compras', component: ComprasComponent},
         {path:'CambioClave', component: CambioClaveComponent},
@@ -65,6 +67,7 @@ const appRoutes: Routes=[
     HomeComponent,
     ComidaComponent,
     NavbarComponent,
+    BuscarComponent,
     ComprasComponent,
     HistorialComprasComponent,
     CambioClaveComponent,
