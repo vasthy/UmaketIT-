@@ -26,6 +26,8 @@ export class ComidaComponent implements OnInit {
   id: string;
   tipo: string;
   descripcion: string;
+  comidatoEdit:Comida;
+  editState: boolean=false;
 
   /// esto iria en la vista de admin
   comidaForm: FormGroup; 
@@ -70,5 +72,18 @@ export class ComidaComponent implements OnInit {
     this.comidaService.deleteComidas(comida);
     console.log(comida);
   }
+  
+  updateComida(comida){
+    this.comidaService.updateComida(comida);
+    this.comidatoEdit=null;
+    this.editState=false;
+  
+}
+
+EditComida(comida){
+  this.editState=true;
+  this.comidatoEdit=comida;
+
+}
 
 }

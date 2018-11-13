@@ -76,11 +76,11 @@ export class LoginComponent implements OnInit {
     console.log("Form", this.usuarioForm.value)
     this.UsuarioService.addUser(this.usuarioForm.value);
     this.authservice.afAuth.auth.createUserWithEmailAndPassword(this.usuarioForm.value.email,this.usuarioForm.value.contrasena).then(user=>{
-      user.user.updateProfile({displayName: this.usuarioForm.value.nombre, photoURL:"https://firebasestorage.googleapis.com/v0/b/umakeit-3b4e1.appspot.com/o/imagenes%2Fuser_male2-256.png?alt=media&token=51fc8b39-08f4-4131-8140-ec7733d45a1e"})
+      user.user.updateProfile({ displayName:this.usuarioForm.value.nombre, photoURL:"https://firebasestorage.googleapis.com/v0/b/umakeit-3b4e1.appspot.com/o/imagenes%2Fuser_male2-256.png?alt=media&token=51fc8b39-08f4-4131-8140-ec7733d45a1e"})
     }).then(change=>{
       this.router.navigateByUrl('/login');
     }).catch(err=> console.log(err.message));
-    this.resetform();
+   
     
   }
 

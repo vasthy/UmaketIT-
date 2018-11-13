@@ -53,35 +53,49 @@
               
             <hr>
             <div class="w3-container">
-              <button onclick="document.getElementById('id01').style.display='block'" class="w3-button" style="background-color:#610b0b; color:white;">Informate</button>
-              <br><br>
               <button class="w3-button" style="background-color:#610b0b; color:white;"> Comprar </button>
               <br><br>
               <button class="w3-button" style="background-color:#610b0b; color:white;" (click)="EliminarPlato(comida)"> Eliminar</button>
+              <button class="w3-button" style="background-color:#610b0b; color:white;" (click)="editComida(comida)"> Modificar</button>
+
               <br><br>
-
-
-              <div id="id01" class="w3-modal fle" style="max-width: auto ">
-                <div class="w3-modal-content w3-animate-zoom" >
-                  <header class="w3-container" style="background-color:black;">
-                    <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                    <h2 style="color: white;">INFORMACION SOBRE EL PLATO </h2>
-                  </header>
-                  <div class="w3-container" >
-                    <p style="color: black;">{{comidas.precio}}</p>
-                  </div>
-                  <footer class="w3-container">
-                    <p style="color: black;">Aratxo</p>
-                  </footer>
-                </div>
+              <div class="col-sm-9">
+                <div0>
+                  <form (ngSubmit)="updateComida(comida)">
+                      <div class="row">
+                          <div class="text-center">
+                              <div class="form-group text-center">
+                                  <br>
+                                  <label for="" style="text-align: center;">Nombre:</label>
+                                  <input type="text" class="form-control" name="nombre" placeholder="Edit Title" [(ngModel)]="comida.nombre">
+                              </div>
+                              <div class="form-group">
+                                      <label for="" class="text-center">Precio:</label>
+                                  <input type="number" class="form-control" name="precio" placeholder="Editar precio" [(ngModel)]="comida.precio">
+                              </div>
+                                  <input type="submit" class="btn btn-success" value="Modificar">
+                                  <br><br>
+                                  <div>
+                                          <button class="btn btn-danger" (click)="disableComida(comida)">Deshabilitar</button>
+                                          <br>
+                                          <button class="btn btn-success" (click)="enableComida(comida)">Habilitar</button>
+                                  </div>
+                                  
+                          </div>                                      
+                      </div>
+                  </form>
+                  
               </div>
+              </div>
+               
+            
               
             </div>
           </div>
         </div>
       </div>
     </div>
-
-
-
   </div>
+
+
+  
