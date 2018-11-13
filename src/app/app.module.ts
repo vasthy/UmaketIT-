@@ -16,6 +16,7 @@ import { DeliveryComponent } from './home/delivery/delivery.component';
 import { DesayunoComponent } from './home/desayuno/desayuno.component';
 import { PostresComponent } from './home/postres/postres.component';
 import { ContactanosComponent } from './home/contactanos/contactanos.component';
+import { BuscarComponent } from './home/buscar/buscar.component';
 import { auth } from 'firebase/app';
 
 
@@ -32,6 +33,7 @@ import { FormBuilder, FormsModule, Validators, FormGroup, ReactiveFormsModule} f
 import { BsModalService, ModalModule } from 'ngx-bootstrap/modal';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 
+
 const appRoutes: Routes=[
 
   {path: '', redirectTo:'/login', pathMatch:'full'},
@@ -47,7 +49,8 @@ const appRoutes: Routes=[
         {path: 'delivery', component: DeliveryComponent},
         {path: 'desayuno', component: DesayunoComponent},
         {path: 'postre', component: PostresComponent},
-        {path: 'contactanos', component: ContactanosComponent}
+        {path: 'contactanos', component: ContactanosComponent},
+        {path: 'buscar', component: BuscarComponent}
       ]
 
   },
@@ -74,6 +77,7 @@ const appRoutes: Routes=[
     DesayunoComponent,
     PostresComponent,
     ContactanosComponent,
+    BuscarComponent,
   
   ],
   imports: [

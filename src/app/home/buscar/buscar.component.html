@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="card" style="background-color:white;  left: 15%;">
+    <h3 style="color: black; text-align: center;">BUSCAR : </h3>
+
+    <div class="search-container">
+      <form action="/action_page.php">
+        <input class="form-control shadow" type="text" placeholder="Search.." name="search" [(ngModel)]="termBusqueda"
+          (keydown)="search($event)">
+        <button type="submit"><i class="fa fa-search"></i></button>
+        
+      </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-sm-4" *ngFor="let comida of comidas" style="left:15%;">
+
+
+      <div class="card" style="max-width: auto; background-color: white; opacity: 1;">
+        <div class="card-body">
+
+          <h5 class="card-title" style="color: black;">{{comida.nombre}}</h5>
+          <hr>
+          <img src="{{comida.imagen}}">
+
+          <hr>
+          <div class="w3-container">
+            <button class="w3-button" style="background-color:#610b0b; color:white;"> Comprar </button>
+            <br><br>
+
+
+            <br><br>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- 
+<input type="text" [(ngModel)]="searchterm" (keydown)="search($event)">
+<ul *ngFor="let comida of comidas">
+  <li>{{comida.nombre}}</li>
+  <li>{{comida.precio}}</li>
+</ul>
+<div *ngIf="clubs?.length < 1">
+  <p>Lo sentimos, comida no encontrada</p>
+</div>
+ -->

@@ -7,33 +7,33 @@
 
   </div><br>
   <!--Comienzo de intento de form builder-->
- 
+
   <div id="id02" class="w3-modal fle" style="max-width: auto">
     <div class="w3-modal-content w3-animate-zoom">
       <header class="w3-container" style="background-color:black;">
         <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
         <h2 style="color: white;">AGREGAR PLATO </h2>
       </header>
-      
+
       <div class="w3-container">
         <form [formGroup]="comidaForm">
           <label>Nombre</label>
-          <input type="text" class="form-control" id="nombre"   formControlName = "nombre"  name="nombre"> 
+          <input type="text" class="form-control" id="nombre" formControlName="nombre" name="nombre">
           <label>Descripcion</label>
-          <input type="text" class="form-control" id="descripcion"  formControlName = "descripcion" name="descripcion">
+          <input type="text" class="form-control" id="descripcion" formControlName="descripcion" name="descripcion">
           <label>Tipo</label>
-          <input type="text" class="form-control" id="tipo"  formControlName = "tipo" name="tipo">
+          <input type="text" class="form-control" id="tipo" formControlName="tipo" name="tipo">
           <label>Precio</label>
-          <input type="text" class="form-control" id="price"  formControlName = "precio" name="precio">
+          <input type="text" class="form-control" id="price" formControlName="precio" name="precio">
           <label>Imagen</label>
-          <input type="text" class="form-control" id="image"  formControlName = "imagen" name="imagen">      
+          <input type="text" class="form-control" id="image" formControlName="imagen" name="imagen">
           <br>
-          <button (click)="addComida()" type="Submit" class="button-primary" [disabled]="!comidaForm.valid" > Submit</button>
+          <button (click)="addComida()" type="Submit" class="button-primary" [disabled]="!comidaForm.valid"> Submit</button>
         </form>
 
 
       </div>
-      
+
     </div>
   </div>
 
@@ -50,38 +50,53 @@
             <h5 class="card-title" style="color: black;">{{comida.nombre}}</h5>
             <hr>
             <img src="{{comida.imagen}}">
-              
+
             <hr>
             <div class="w3-container">
-              <button onclick="document.getElementById('id01').style.display='block'" class="w3-button" style="background-color:#610b0b; color:white;">Informate</button>
-              <br><br>
               <button class="w3-button" style="background-color:#610b0b; color:white;"> Comprar </button>
               <br><br>
-              <button class="w3-button" style="background-color:#610b0b; color:white;" (click)="EliminarPlato(comida)"> Eliminar</button>
+              <button class="w3-button" style="background-color:#610b0b; color:white;" (click)="EliminarPlato(comida)">
+                Eliminar</button>
+              <button class="w3-button" style="background-color:#610b0b; color:white;" (click)="editComida(comida)">
+                Modificar</button>
+
               <br><br>
+              <div class="col-sm-9">
+                
+                  <form (ngSubmit)="updateComida(comida)">
+                    <div class="row">
+                      <div class="text-center">
+                        <div class="form-group text-center">
+                          <br>
+                          <label for="" style="text-align: center;">Nombre:</label>
+                          <input type="text" class="form-control" name="nombre" placeholder="Edit Title" [(ngModel)]="comida.nombre">
+                          </div>
+                          <div class="form-group">
+                              <label for="" class="text-center">Precio:</label>
+                              <input type="number" class="form-control" name="precio" placeholder="Editar precio"
+                             [(ngModel)]="comida.precio">
+                          </div>
+                             <input type="submit" class="btn btn-success" value="Modificar">
+                              <br><br>
+                              <div>
+                              <button class="btn btn-danger" (click)="disableComida(comida)">Deshabilitar</button>
+                          <br>
+                              <button class="btn btn-success" (click)="enableComida(comida)">Habilitar</button>
+                        </div>
 
+                      </div>
+                    </div>
+                  </form>
+                
 
-              <div id="id01" class="w3-modal fle" style="max-width: auto ">
-                <div class="w3-modal-content w3-animate-zoom" >
-                  <header class="w3-container" style="background-color:black;">
-                    <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                    <h2 style="color: white;">INFORMACION SOBRE EL PLATO </h2>
-                  </header>
-                  <div class="w3-container" >
-                    <p style="color: black;">{{comidas.precio}}</p>
-                  </div>
-                  <footer class="w3-container">
-                    <p style="color: black;">Aratxo</p>
-                  </footer>
-                </div>
               </div>
-              
             </div>
+
+
+
           </div>
         </div>
       </div>
     </div>
-
-
-
   </div>
+</div>
