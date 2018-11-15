@@ -61,12 +61,15 @@ input[type=text], input[type=password] {
 /* Set a style for all buttons */
 button {
     background-color: #A19F9F;
-    color: black;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
     width: 150px;
+    background-color:#610b0b; 
+    color:white;
+    border-radius: 10%;
+   
 }
 
 button:hover {
@@ -74,7 +77,7 @@ button:hover {
 }
 
 
-.slider-container{
+.card{
   position: absolute;
   display: flex;
   align-items: flex-start;

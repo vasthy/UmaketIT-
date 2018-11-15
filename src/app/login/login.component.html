@@ -1,83 +1,106 @@
 <div id="contenedor">
 
   <ul>
-    <li><img src="assets/Img/14.jpg"  ></li>
-    <li><img src="assets/Img/15.jpg" ></li>
-    <li><img src="assets/Img/16.jpg" ></li>
+    <li><img src="assets/Img/14.jpg"></li>
+    <li><img src="assets/Img/15.jpg"></li>
+    <li><img src="assets/Img/16.jpg"></li>
   </ul>
 
-  <div class="slider-container card" style="background-color:black; opacity:0.8; width:30%; left: 35%; border-radius: 5%;" >
-  	<div class="slider-title">
-  		<h1 style="color: white;position: relative; left: 30%;">INICIAR SESION</h1><hr><br>
-  		
+  <!-- <div class="slider-container card" style="background-color:black; opacity:0.8; width:30%; left: 35%; border-radius: 5%;">
+    <div class="slider-title">
+      <h1 style="color: white;position: relative; left: 30%;">INICIAR SESION</h1>
+      <hr class="hr"><br>
+
     </div>
     <div class="flex-container">
-        <form [formGroup]="loginForm" style="  left: 14%; ">
-            <label class="label">Email</label>
-            <input type="text" class="form-control" id="email2"  formControlName = "email" name="email">
-            <label class="label">Contrasena</label>
-            <input type="password" class="form-control" id="contrasena2"  formControlName = "contrasena" name="contrasena">
-          
-        </form> 
-      
+      <form [formGroup]="loginForm" style="  left: 14%; ">
+        <label class="label">Email</label>
+        <input type="text" class="form-control" id="email2" formControlName="email" name="email">
+        <label class="label">Contrasena</label>
+        <input type="password" class="form-control" id="contrasena2" formControlName="contrasena" name="contrasena">
+
+      </form>
+
     </div>
 
-	<div class="botones">
-      
-		<button type="button" class="btn btn-primary" style="position:relative; left: 1%;" id="Iniciar"(click)="IniciarSesion()" >Iniciar Sesion</button>
-    <button type="button" class="btn btn-primary" style="position:relative; left: 8%;" id="Registrate" onclick="document.getElementById('M').style.display='block'">Registrate</button>
-    <div>
-        <button type="button" class="btn btn-social btn-google" id="Google" (click)="Googlelogin()" >Google</button>
-    </div>
-    
-  </div><br>
-  
-    
+    <div class="botones">
+
+      <button type="button" class="btn btn-primary" style="position:relative; left: 1%;" id="Iniciar" (click)="IniciarSesion()">Iniciar
+        Sesion</button>
+      <button type="button" class="btn btn-primary" style="position:relative; left: 8%;" id="Registrate" onclick="document.getElementById('M').style.display='block'">Registrate</button>
+      <div>
+        <button type="button" class="btn btn-social btn-google" id="Google" (click)="Googlelogin()">Google</button>
+      </div>
+
+    </div><br>
+
+
     <div id="M" class="w3-modal fle" style="max-width: auto;">
       <div class="w3-modal-content w3-animate-zoom" style="left: 20%; top: 17%;">
         <header class="w3-container" style="background-color:black;">
           <span onclick="document.getElementById('M').style.display='none'" class="w3-button w3-display-topright">&times;</span>
           <h2 style="color: white; text-align: center;"> Llenar todos los campos para registarse</h2>
         </header>
-        
-        <div class="w3-container" >
+
+        <div class="w3-container">
           <form [formGroup]="usuarioForm">
-            <label >Nombre</label>
-            <input type="text" class="form-control" id="nombre"   formControlName = "nombre"  name="nombre"> 
+            <label>Nombre</label>
+            <input type="text" class="form-control" id="nombre" formControlName="nombre" name="nombre">
             <label>Apellido</label>
-            <input type="text" class="form-control" id="apellido"  formControlName = "apellido" name="apellido">
+            <input type="text" class="form-control" id="apellido" formControlName="apellido" name="apellido">
             <label>Email</label>
-            <input type="text" class="form-control" id="email"  formControlName = "email" name="email">
+            <input type="text" class="form-control" id="email" formControlName="email" name="email">
             <label>Contrasena</label>
-            <input type="password" class="form-control" id="contrasena"  formControlName = "contrasena" name="contrasena">
+            <input type="password" class="form-control" id="contrasena" formControlName="contrasena" name="contrasena">
             <br>
-            <button (click)="addUser()" type="Submit" class="button-primary" [disabled]="!usuarioForm.valid" style=" position:relative; left: 40%;"> Submit</button>
+            <button (click)="addUser()" type="Submit" class="button-primary" [disabled]="!usuarioForm.valid" style=" position:relative; left: 40%;">
+              Submit</button>
           </form>
-  
-  
+
+
         </div>
-        
+
       </div>
     </div>
-  </div>
+  </div> -->
+  <div class="card" style=" left:32%; background-color: black; opacity: 0.95;">
+    <div class="card-title"><br>
+        <h1 class="card-tittle" style="position: relative; left:65%; color: white;" > INICIAR SESION</h1>
+    </div><hr><br>
+    <div class="card-body">
+      <div class="flex-container">
+        <form [formGroup]="loginForm" style="  left: 14%; ">
+          <label class="label">Email</label>
+          <input type="text" class="form-control" id="email2" formControlName="email" name="email" placeholder="Email">
+          <label class="label">Contrasena</label>
+          <input type="password" class="form-control" id="contrasena2" formControlName="contrasena" name="contrasena" placeholder="Contresena">
+        </form>
+       </div><br><br>
 
-     
-  
+      <div class="card-footer">
+        <button type="button" class="btn btn-primary" style="position:relative; left: 1%;" id="Iniciar" (click)="IniciarSesion()">IniciarSesion</button>
+        <button type="button" class="btn btn-primary" style="position:relative; left: 6%;" id="Registrate" onclick="document.getElementById('M').style.display='block'">Registrate</button>
+        <button type="button" class="btn btn-social btn-google" id="Google" (click)="Googlelogin()" style="position:relative; left: 11%;">Google</button>
+       </div>
+      </div>
+    </div>
 
-  
+
+
+
+
 </div>
 
 
 <script>
-// Get the modal
-var modal = document.getElementById('M');
+  // Get the modal
+  var modal = document.getElementById('M');
 
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function (event) {
     if (event.target == modal) {
-        modal.style.display = "none";
+      modal.style.display = "none";
     }
-}
+  }
 </script>
-

@@ -7,17 +7,18 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #610b0b;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/umakeit-3b4e1.appspot.com/o/imagenes%2F03599794799ea32.jpg?alt=media&token=df73ef8f-97ae-4a33-9b46-393cbdb942fd");
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #e6e6e6;
+    color:white;
     display: block;
     transition: 0.3s;
     outline: none;
@@ -29,7 +30,7 @@
 }
 
 .sidenav a:hover, .dropdown-btn:hover {
-    color: #f1f1f1;
+    color:#610b0b;
 }
 
 .sidenav .closebtn {
@@ -60,10 +61,8 @@
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-.active {
-    background-color: green;
-    color: white;
-}
+
+
 
 
 

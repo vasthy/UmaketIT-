@@ -1,11 +1,10 @@
 <div class="container">
-  <div class="card" style="background-color:white;  left: 15%;">
-    <h3 style="color: black; text-align: center;">LOS ALMUERZOS DEL MOMENTO : </h3>
-    <button onclick="document.getElementById('id02').style.display='block'" class="w3-button" style="background-color:#610b0b; color:white;">Agregar
+  <div class="card" style="background-color:black;  left: 15%; opacity: 0.7;">
+    <h3 style="color: white; text-align: center; opacity: 1;">LOS ALMUERZOS DEL MOMENTO : </h3>
+    <button onclick="document.getElementById('id02').style.display='block'" class="btn btn" style="background-color:#610b0b; color:white;">Agregar
       Nuevo</button>
-
-
   </div><br>
+
   <!--Comienzo de intento de form builder-->
 
   <div id="id02" class="w3-modal fle" style="max-width: auto">
@@ -44,56 +43,21 @@
     <div class="col-sm-4" *ngFor="let comida of comidasFiltradas" style="left:15%;">
       <div *ngIf="comida.tipo == 'almuerzo' ">
 
-        <div class="card" style="max-width: auto; background-color: white; opacity: 1;">
+        <div class="card" style="max-width:auto; background-color: black; opacity: 0.7; border-radius: 10%;">
           <div class="card-body">
-
-            <h5 class="card-title" style="color: black;">{{comida.nombre}}</h5>
+            <h5 class="card-title" style="color: white;">{{comida.nombre}}</h5>
             <hr>
-            <img src="{{comida.imagen}}">
-
+            <img src="{{comida.imagen}}" style="width:70%;" class="card-img-top" alt="Card image">
             <hr>
             <div class="w3-container">
-              <button class="w3-button" style="background-color:#610b0b; color:white;"> Comprar </button>
+              <button class="w3-button"> Comprar </button>
               <br><br>
-              <button class="w3-button" style="background-color:#610b0b; color:white;" (click)="EliminarPlato(comida)">
+              <button class="w3-button"  (click)="EliminarPlato(comida)">
                 Eliminar</button>
-              <button class="w3-button" style="background-color:#610b0b; color:white;" (click)="editComida(comida)">
+              <button class="w3-button" (click)="editComida(comida)">
                 Modificar</button>
-
               <br><br>
-              <div class="col-sm-9">
-                
-                  <form (ngSubmit)="updateComida(comida)">
-                    <div class="row">
-                      <div class="text-center">
-                        <div class="form-group text-center">
-                          <br>
-                          <label for="" style="text-align: center;">Nombre:</label>
-                          <input type="text" class="form-control" name="nombre" placeholder="Edit Title" [(ngModel)]="comida.nombre">
-                          </div>
-                            <div class="form-group">
-                              <label for="" class="text-center">Precio:</label>
-                              <input type="number" class="form-control" name="precio" placeholder="Editar precio"
-                             [(ngModel)]="comida.precio">
-                             
-                             <input type="submit" class="btn btn-success" value="Modificar">
-                              <br><br>
-                              <div>
-                              <button class="btn btn-danger" (click)="disableComida(comida)">Deshabilitar</button>
-                              <br>
-                              <button class="btn btn-success" (click)="enableComida(comida)">Habilitar</button>
-                              </div>
-
-                      </div>
-                    </div>
-                  </form>
-                
-
-              </div>
             </div>
-
-
-
           </div>
         </div>
       </div>

@@ -1,21 +1,20 @@
 <div class="container">
-  <div class="card" style="opacity: 0.7; left: 15%;">
-      <h3 style="color: black; text-align: center; ">SEGURIDAD A LA HORA DE ENTREGA</h3> <hr>
-      <p style="color: black;">Puedes conocer nuestro personal en todo momento</p>
+  <div class="card" style=" background-color: black; opacity: 0.95; left: 15%;">
+      <h3 style="color: white; text-align: center; ">SEGURIDAD A LA HORA DE ENTREGA</h3> <hr>
+      <p style="color: white;">Puedes conocer nuestro personal en todo momento</p>
   </div><br>
    
   
       <div class="row">
         <div class="col-sm-4"*ngFor="let deliverys of Delive" style="left:15%;">
-          <div class="card" style="max-width: auto; background-color:floralwhite; opacity: 1gi;">
+          <div class="card" style="max-width: auto;  background-color: black; opacity: 0.95; border-radius: 10%;">
             <div class="card-body" >
-              <h5 class="card-title" style="color: black;">{{deliverys.nombre}}</h5>
+              <h5 class="card-title" style="color: white;">{{deliverys.nombre}}</h5>
               <hr>
               <img src="assets/Img/{{deliverys.imagen}}.png" style="width: 50%">
               <hr>
               <div class="w3-container">
                 <button onclick="document.getElementById('m').style.display='block'" class="w3-button" style="background-color: #610b0b; color: white;" >Informacion</button>
-                <hr>
                 <div id="m" class="w3-modal fle w3-animate-opacity" style="max-width: auto">
                   <div class="w3-modal-content w3-animate-zoom" >
                     <header class="w3-container w3-black">

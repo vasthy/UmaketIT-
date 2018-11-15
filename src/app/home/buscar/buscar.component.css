@@ -68,3 +68,12 @@ body {
     border: 1px solid #ccc;  
   }
 }
+
+.hr {
+  height: 1px;
+  border: 0;
+  color: #666;
+  background-color:black;
+  left: 15%;
+  position: relative;
+}
