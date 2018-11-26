@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
  apellido:string;
  email:string;
  contrasena:string;
-
+ registerBol: boolean = false;
 
  usuarioForm:FormGroup;
  loginForm:FormGroup;
@@ -59,13 +59,19 @@ export class LoginComponent implements OnInit {
       console.log(Users);
      });
  
+     this.UsuarioService.getAllUsers().subscribe(users=>{
+       users.forEach(user=>{
+         console.log(`¿¿_`,user.payload.doc.id)
+         this.UsuarioService.updateUserAdmin(user.payload.doc.data(),user.payload.doc.id)
+       })
+     })
   
   }
 
   Googlelogin(){
     this.authservice.login()
       .then((res)=>{
-        
+       this.authservice.userKey = res.user.uid;
        this.router.navigateByUrl('/home/inicio');
       }).catch(err=> console.error(err.message));// recordar .error para errores no .log
    }
@@ -74,6 +80,8 @@ export class LoginComponent implements OnInit {
 
   addUser() {
     console.log("Form", this.usuarioForm.value)
+    this.usuarioForm.value.admin = false;
+    this.closeModal();
     this.UsuarioService.addUser(this.usuarioForm.value);
     this.authservice.afAuth.auth.createUserWithEmailAndPassword(this.usuarioForm.value.email,this.usuarioForm.value.contrasena).then(user=>{
       user.user.updateProfile({ displayName:this.usuarioForm.value.nombre, photoURL:"https://firebasestorage.googleapis.com/v0/b/umakeit-3b4e1.appspot.com/o/imagenes%2Fuser_male2-256.png?alt=media&token=51fc8b39-08f4-4131-8140-ec7733d45a1e"})
@@ -86,11 +94,10 @@ export class LoginComponent implements OnInit {
 
   IniciarSesion(){
     
-    
     this.authservice.afAuth.auth.signInWithEmailAndPassword(this.loginForm.value.email,this.loginForm.value.contrasena).then((res)=>{
+      this.authservice.userKey = res.user.uid;
      this.router.navigateByUrl('/home/inicio');
      this.resetform();
-    
    }).catch(err=> console.error(err.message));
    var User= this.authservice.afAuth.auth.currentUser;
 
@@ -109,8 +116,15 @@ export class LoginComponent implements OnInit {
     this.usuarioForm.reset();
   }
   
-      
-  
+  closeModal(){
+    document.getElementById('M').style.display='none'; 
+    this.registerBol = false
+  }
+
+  register(){
+    this.registerBol = true;
+    document.getElementById('M').style.display='block';
+  }  
 
     
   }

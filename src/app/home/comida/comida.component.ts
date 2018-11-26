@@ -7,6 +7,11 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { Observable } from 'rxjs';
 import { AngularFireStorage, AngularFireUploadTask } from 'angularfire2/storage';
 import { finalize, tap } from 'rxjs/operators';
+import { AuthserviceService } from 'src/app/services/authservice.service';
+import { UsuarioService } from 'src/app/services/Usuarios.service';
+import { auth } from 'firebase';
+import { Users } from 'src/app/models/Users';
+
 
 
 
@@ -28,14 +33,14 @@ export class ComidaComponent implements OnInit {
   descripcion: string;
   comidatoEdit:Comida;
   editState: boolean=false;
-
+  isAdmin: boolean = false;
   /// esto iria en la vista de admin
   comidaForm: FormGroup; 
   
 
 
 
-  constructor(public comidaService: ComidaService,private storage: AngularFireStorage,private modalService: BsModalService, private fb: FormBuilder) {
+  constructor(public comidaService: ComidaService,private storage: AngularFireStorage,private modalService: BsModalService, private fb: FormBuilder,private auth: AuthserviceService; private usuario:UsuarioService) {
    //esto iria en la vista de admin para crear un form y agregar comidas
      this.comidaForm = fb.group({
       nombre: ["", Validators.required],
@@ -44,6 +49,11 @@ export class ComidaComponent implements OnInit {
       precio: ["", Validators.required],
       imagen: ["", Validators.required],
     })
+    this.usuario.getUsuario(auth.userKey).subscribe((user:Users[])=>{
+      this.isAdmin = user[0].admin;
+      console.log("00>",user[0])
+    });
+    
 }
 
   addComida() {

@@ -9,16 +9,17 @@ import {  Router} from '@angular/router';
 export class AuthserviceService {
   email:string;
   password:string;
-
+  userKey: string;
 
 
   constructor(public afAuth: AngularFireAuth, public router: Router) {
       
    }
 
-   login() {
+  login() {
    return  this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
+
   logout() {
    this.afAuth.auth.signOut().then((res)=>{
      this.router.navigateByUrl('/login');

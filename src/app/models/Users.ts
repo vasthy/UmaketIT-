@@ -4,5 +4,6 @@ export interface Users{
     lastname?:string;
     email?:string;
     password?:string;
+    admin?:boolean;
 
   }
